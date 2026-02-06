@@ -4,6 +4,7 @@ import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Card, CardContent } from "@/components/ui/card";
+import PartnersCarousel from "@/components/PartnersCarousel";
 
 const HomePage = () => {
   return (
@@ -179,24 +180,16 @@ const HomePage = () => {
           title="Empowering Young People Together"
           description="We collaborate with a diverse range of organisations to support our mission."
         />
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-          {[
+        <PartnersCarousel
+          partners={[
             { src: "https://myg.org.au/wp-content/uploads/2023/10/sumali-australian-councel.png", alt: "Somali Australian Council" },
             { src: "https://myg.org.au/wp-content/uploads/2023/10/Banyule_Logo.png", alt: "Banyule City Council" },
             { src: "https://myg.org.au/wp-content/uploads/2023/10/Melbourne_Victory.png", alt: "Melbourne Victory" },
             { src: "https://myg.org.au/wp-content/uploads/2023/10/victoriya-police.png", alt: "Victoria Police" },
             { src: "https://myg.org.au/wp-content/uploads/2023/10/Football_Victoria_logo.png", alt: "Football Victoria" },
             { src: "https://myg.org.au/wp-content/uploads/2023/10/city-of-darebin.png", alt: "City of Darebin" },
-          ].map((partner) => (
-            <div key={partner.alt} className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
-              <img
-                src={partner.src}
-                alt={partner.alt}
-                className="max-h-16 w-auto object-contain"
-              />
-            </div>
-          ))}
-        </div>
+          ]}
+        />
         <div className="text-center mt-12">
           <Button variant="outline" asChild>
             <Link to="/get-involved">Become a Partner</Link>
