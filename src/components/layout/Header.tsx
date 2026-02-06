@@ -25,13 +25,13 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
       <nav className="container-page">
-        <div className="flex h-16 md:h-20 items-center justify-between">
+        <div className="flex h-16 sm:h-18 md:h-20 lg:h-24 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 shrink-0">
             <img
               src={mygLogo}
               alt="Multicultural Youth Group"
-              className="h-10 md:h-12 w-auto"
+              className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto"
             />
           </Link>
 
