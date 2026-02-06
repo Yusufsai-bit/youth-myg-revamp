@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -22,15 +22,15 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/80 border-b border-border/50">
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
       <nav className="container-page">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-16 md:h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 shrink-0">
             <img
               src="https://myg.org.au/wp-content/uploads/2019/12/cropped-mgr-logo.png"
               alt="Multicultural Youth Group"
-              className="h-12 w-auto"
+              className="h-10 md:h-12 w-auto"
             />
           </Link>
 
@@ -40,7 +40,7 @@ const Header = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className={`px-4 py-2.5 text-sm font-medium rounded-full transition-all ${
+                className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
                   isActive(link.href)
                     ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -51,22 +51,17 @@ const Header = () => {
             ))}
           </div>
 
-          {/* CTA Buttons - Desktop */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Button variant="ghost" size="sm" asChild>
-              <Link to="/contact">Contact</Link>
-            </Button>
+          {/* CTA Button - Desktop */}
+          <div className="hidden lg:block">
             <Button asChild>
-              <Link to="/get-involved">
-                Join MYG <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
+              <Link to="/get-involved">Join MYG</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2.5 rounded-full hover:bg-muted transition-colors"
+            className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
@@ -79,14 +74,14 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden py-6 border-t border-border/50 animate-fade-in">
-            <div className="flex flex-col gap-2">
+          <div className="lg:hidden py-4 border-t border-border animate-fade-in">
+            <div className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`px-4 py-3 text-base font-medium rounded-xl transition-colors ${
+                  className={`px-4 py-3 text-base font-medium rounded-lg transition-colors ${
                     isActive(link.href)
                       ? "text-primary bg-primary/10"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -95,15 +90,10 @@ const Header = () => {
                   {link.name}
                 </Link>
               ))}
-              <div className="pt-4 px-4 flex flex-col gap-3">
-                <Button variant="outline" asChild className="w-full">
-                  <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                    Contact Us
-                  </Link>
-                </Button>
+              <div className="pt-4 px-4">
                 <Button asChild className="w-full">
                   <Link to="/get-involved" onClick={() => setIsMenuOpen(false)}>
-                    Join MYG <ArrowRight className="ml-1 h-4 w-4" />
+                    Join MYG
                   </Link>
                 </Button>
               </div>

@@ -82,21 +82,17 @@ const GalleryPage = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 bg-foreground text-background overflow-hidden">
-        <div className="container-page relative z-10">
+      <section className="relative bg-gradient-to-br from-myg-teal-light via-background to-background">
+        <div className="container-page py-16 md:py-24">
           <div className="max-w-3xl">
-            <span className="text-sm font-bold uppercase tracking-[0.2em] text-accent-coral mb-4 block">
+            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
               Gallery
             </span>
-            <h1 className="text-background mb-6">Our Moments</h1>
-            <p className="text-xl text-background/80">
+            <h1 className="mb-6">Our Moments</h1>
+            <p className="text-xl text-muted-foreground">
               A collection of memories from MYG events, programs, and community gatherings.
             </p>
           </div>
-        </div>
-        <div className="absolute top-0 right-0 w-1/2 h-full opacity-20">
-          <div className="absolute top-20 right-20 w-64 h-64 bg-accent-purple rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-40 w-96 h-96 bg-primary rounded-full blur-3xl" />
         </div>
       </section>
 
@@ -107,12 +103,12 @@ const GalleryPage = () => {
           title="Event Gallery"
           description="Click on any image to view it in full screen."
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {galleryImages.map((image, index) => (
             <button
               key={image.id}
               onClick={() => openLightbox(index)}
-              className="group relative aspect-[3/4] overflow-hidden rounded-2xl bg-muted focus-ring"
+              className="group relative aspect-[3/4] overflow-hidden rounded-xl bg-muted focus-ring"
             >
               <img
                 src={image.thumbnail}
@@ -120,9 +116,9 @@ const GalleryPage = () => {
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-background text-sm line-clamp-3 leading-relaxed">
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <p className="text-background text-sm line-clamp-2">
                     {image.caption}
                   </p>
                 </div>
@@ -135,20 +131,20 @@ const GalleryPage = () => {
       {/* Lightbox */}
       {isLightboxOpen && currentImage && (
         <div
-          className="fixed inset-0 z-50 bg-foreground/98 backdrop-blur-sm animate-fade-in"
+          className="fixed inset-0 z-50 bg-foreground/95 backdrop-blur-sm animate-fade-in"
           onClick={closeLightbox}
         >
           {/* Close button */}
           <button
             onClick={closeLightbox}
-            className="absolute top-6 right-6 z-10 p-3 rounded-full bg-background/10 hover:bg-background/20 text-background transition-colors"
+            className="absolute top-4 right-4 z-10 p-3 rounded-full bg-background/10 hover:bg-background/20 text-background transition-colors"
             aria-label="Close gallery"
           >
             <X className="h-6 w-6" />
           </button>
 
           {/* Image counter */}
-          <div className="absolute top-6 left-6 z-10 px-5 py-2.5 rounded-full bg-background/10 text-background text-sm font-semibold">
+          <div className="absolute top-4 left-4 z-10 px-4 py-2 rounded-full bg-background/10 text-background text-sm font-medium">
             {selectedIndex + 1} of {galleryImages.length}
           </div>
 
@@ -158,7 +154,7 @@ const GalleryPage = () => {
               e.stopPropagation();
               goToPrevious();
             }}
-            className="absolute left-6 top-1/2 -translate-y-1/2 z-10 p-4 rounded-full bg-background/10 hover:bg-background/20 text-background transition-colors"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-background/10 hover:bg-background/20 text-background transition-colors"
             aria-label="Previous image"
           >
             <ChevronLeft className="h-8 w-8" />
@@ -169,7 +165,7 @@ const GalleryPage = () => {
               e.stopPropagation();
               goToNext();
             }}
-            className="absolute right-6 top-1/2 -translate-y-1/2 z-10 p-4 rounded-full bg-background/10 hover:bg-background/20 text-background transition-colors"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-background/10 hover:bg-background/20 text-background transition-colors"
             aria-label="Next image"
           >
             <ChevronRight className="h-8 w-8" />
@@ -177,28 +173,28 @@ const GalleryPage = () => {
 
           {/* Main content */}
           <div
-            className="flex flex-col items-center justify-center h-full px-6 py-24"
+            className="flex flex-col items-center justify-center h-full px-4 py-20"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Image */}
-            <div className="relative max-w-5xl max-h-[65vh] w-full flex items-center justify-center">
+            <div className="relative max-w-5xl max-h-[70vh] w-full flex items-center justify-center">
               <img
                 src={currentImage.src}
                 alt={`Gallery image ${selectedIndex + 1}`}
-                className="max-w-full max-h-[65vh] object-contain rounded-xl shadow-2xl animate-scale-in"
+                className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-2xl animate-scale-in"
               />
             </div>
 
             {/* Caption */}
-            <div className="mt-8 max-w-3xl text-center px-4">
-              <p className="text-background/90 text-lg leading-relaxed">
+            <div className="mt-6 max-w-3xl text-center">
+              <p className="text-background/90 text-base md:text-lg leading-relaxed">
                 {currentImage.caption}
               </p>
             </div>
           </div>
 
           {/* Thumbnail strip */}
-          <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3 px-6 overflow-x-auto scrollbar-hide">
+          <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 px-4 overflow-x-auto scrollbar-hide">
             {galleryImages.map((image, index) => (
               <button
                 key={image.id}
@@ -206,10 +202,10 @@ const GalleryPage = () => {
                   e.stopPropagation();
                   setSelectedIndex(index);
                 }}
-                className={`shrink-0 w-20 h-20 rounded-xl overflow-hidden transition-all duration-200 ${
+                className={`shrink-0 w-16 h-16 rounded-lg overflow-hidden transition-all duration-200 ${
                   index === selectedIndex
-                    ? "ring-3 ring-primary ring-offset-2 ring-offset-foreground"
-                    : "opacity-40 hover:opacity-80"
+                    ? "ring-2 ring-primary ring-offset-2 ring-offset-foreground/95"
+                    : "opacity-50 hover:opacity-100"
                 }`}
               >
                 <img
