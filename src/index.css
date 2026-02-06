@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 /* MYG Design System - Multicultural Youth Group
-   Clean, modern, youth-focused design with teal branding
+   Inspired by CMY and MYAN - Bold, vibrant, youth-focused
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -14,26 +14,33 @@
     --primary: 180 76% 35%;
     --primary-foreground: 0 0% 100%;
     
+    /* Vibrant accent colors inspired by CMY/MYAN */
+    --accent-coral: 16 100% 66%;
+    --accent-yellow: 45 100% 60%;
+    --accent-purple: 270 60% 55%;
+    --accent-mint: 160 60% 50%;
+    --accent-sky: 200 100% 60%;
+    
     /* Backgrounds */
     --background: 0 0% 100%;
-    --foreground: 210 20% 16%;
+    --foreground: 220 20% 12%;
     
     /* Cards and surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 210 20% 16%;
+    --card-foreground: 220 20% 12%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 210 20% 16%;
+    --popover-foreground: 220 20% 12%;
     
     /* Secondary colors */
-    --secondary: 180 20% 96%;
-    --secondary-foreground: 210 20% 16%;
+    --secondary: 180 20% 97%;
+    --secondary-foreground: 220 20% 12%;
     
     /* Muted elements */
-    --muted: 210 20% 96%;
-    --muted-foreground: 210 10% 45%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 10% 45%;
     
-    /* Accent - warm coral for CTAs */
+    /* Accent */
     --accent: 180 76% 35%;
     --accent-foreground: 0 0% 100%;
     
@@ -42,19 +49,19 @@
     --destructive-foreground: 0 0% 100%;
     
     /* Borders and inputs */
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
     --ring: 180 76% 35%;
     
-    --radius: 0.75rem;
+    --radius: 1rem;
     
     /* Custom MYG colors */
     --myg-teal: 180 76% 35%;
-    --myg-teal-light: 180 50% 94%;
+    --myg-teal-light: 180 60% 96%;
     --myg-teal-dark: 180 76% 25%;
-    --myg-charcoal: 210 20% 16%;
-    --myg-grey-warm: 30 10% 96%;
-    --myg-grey-cool: 210 20% 96%;
+    --myg-charcoal: 220 20% 12%;
+    --myg-grey-warm: 30 10% 97%;
+    --myg-grey-cool: 220 15% 96%;
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
@@ -62,29 +69,29 @@
     --sidebar-primary: 180 76% 35%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 180 20% 96%;
-    --sidebar-accent-foreground: 210 20% 16%;
-    --sidebar-border: 210 20% 90%;
+    --sidebar-accent-foreground: 220 20% 12%;
+    --sidebar-border: 220 15% 90%;
     --sidebar-ring: 180 76% 35%;
   }
 
   .dark {
-    --background: 210 20% 8%;
-    --foreground: 210 20% 96%;
+    --background: 220 20% 8%;
+    --foreground: 220 15% 96%;
     
-    --card: 210 20% 12%;
-    --card-foreground: 210 20% 96%;
+    --card: 220 20% 12%;
+    --card-foreground: 220 15% 96%;
     
-    --popover: 210 20% 12%;
-    --popover-foreground: 210 20% 96%;
+    --popover: 220 20% 12%;
+    --popover-foreground: 220 15% 96%;
     
     --primary: 180 70% 45%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 210 20% 18%;
-    --secondary-foreground: 210 20% 96%;
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 220 15% 96%;
     
-    --muted: 210 20% 18%;
-    --muted-foreground: 210 10% 60%;
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 10% 60%;
     
     --accent: 180 70% 45%;
     --accent-foreground: 0 0% 100%;
@@ -92,24 +99,24 @@
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 210 20% 22%;
-    --input: 210 20% 22%;
+    --border: 220 20% 22%;
+    --input: 220 20% 22%;
     --ring: 180 70% 45%;
     
     --myg-teal: 180 70% 45%;
     --myg-teal-light: 180 40% 18%;
     --myg-teal-dark: 180 70% 55%;
-    --myg-charcoal: 210 20% 96%;
-    --myg-grey-warm: 210 20% 12%;
-    --myg-grey-cool: 210 20% 14%;
+    --myg-charcoal: 220 15% 96%;
+    --myg-grey-warm: 220 20% 12%;
+    --myg-grey-cool: 220 20% 14%;
 
-    --sidebar-background: 210 20% 10%;
-    --sidebar-foreground: 210 20% 96%;
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 220 15% 96%;
     --sidebar-primary: 180 70% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 20% 18%;
-    --sidebar-accent-foreground: 210 20% 96%;
-    --sidebar-border: 210 20% 22%;
+    --sidebar-accent: 220 20% 18%;
+    --sidebar-accent-foreground: 220 15% 96%;
+    --sidebar-border: 220 20% 22%;
     --sidebar-ring: 180 70% 45%;
   }
 }
@@ -132,11 +139,11 @@
   }
 
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1];
   }
 
   h2 {
-    @apply text-3xl md:text-4xl leading-tight;
+    @apply text-3xl sm:text-4xl md:text-5xl leading-[1.15];
   }
 
   h3 {
@@ -166,28 +173,83 @@
     @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
+  .container-wide {
+    @apply max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
   /* Section spacing */
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-20 md:py-28 lg:py-32;
   }
 
   .section-padding-sm {
-    @apply py-12 md:py-16;
+    @apply py-14 md:py-20;
   }
 
-  /* Hero text gradient */
-  .text-gradient-teal {
-    @apply bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent;
+  /* Highlighted text like CMY */
+  .text-highlight {
+    @apply relative inline-block;
+  }
+  
+  .text-highlight::after {
+    content: '';
+    @apply absolute bottom-1 left-0 right-0 h-3 bg-accent-coral/30 -z-10 rounded-sm;
   }
 
-  /* Card hover effect */
+  .text-highlight-yellow::after {
+    @apply bg-accent-yellow/40;
+  }
+
+  .text-highlight-mint::after {
+    @apply bg-accent-mint/30;
+  }
+
+  /* Card variants */
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .card-colorful {
+    @apply rounded-2xl p-8 transition-all duration-300;
+  }
+
+  .card-coral {
+    @apply bg-gradient-to-br from-[hsl(16,100%,66%)] to-[hsl(16,100%,55%)] text-white;
+  }
+
+  .card-yellow {
+    @apply bg-gradient-to-br from-[hsl(45,100%,60%)] to-[hsl(45,100%,50%)] text-foreground;
+  }
+
+  .card-purple {
+    @apply bg-gradient-to-br from-[hsl(270,60%,55%)] to-[hsl(270,60%,45%)] text-white;
+  }
+
+  .card-mint {
+    @apply bg-gradient-to-br from-[hsl(160,60%,50%)] to-[hsl(160,60%,40%)] text-white;
+  }
+
+  .card-teal {
+    @apply bg-gradient-to-br from-primary to-[hsl(180,76%,28%)] text-white;
+  }
+
+  .card-sky {
+    @apply bg-gradient-to-br from-[hsl(200,100%,60%)] to-[hsl(200,100%,50%)] text-white;
   }
 
   /* Focus ring for accessibility */
   .focus-ring {
     @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  /* Eyebrow text */
+  .eyebrow {
+    @apply text-sm font-bold uppercase tracking-[0.2em] text-primary mb-4;
+  }
+
+  /* Large quote/statement text */
+  .statement-text {
+    @apply text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed;
   }
 }
 
@@ -202,13 +264,27 @@
   }
 
   /* Animation delays */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
   .animation-delay-200 {
     animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
   }
   .animation-delay-400 {
     animation-delay: 400ms;
   }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
   .animation-delay-600 {
     animation-delay: 600ms;
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-[hsl(var(--accent-coral))] to-primary;
   }
 }

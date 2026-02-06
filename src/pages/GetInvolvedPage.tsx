@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Users, Heart, Handshake, Gift, CheckCircle } from "lucide-react";
+import { ArrowRight, Users, Heart, Handshake, Gift, CheckCircle, ArrowUpRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/ui/section";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 const ways = [
   {
@@ -18,6 +17,7 @@ const ways = [
       "Priority access to workshops",
       "Join a supportive community",
     ],
+    color: "card-teal",
   },
   {
     id: "volunteer",
@@ -31,6 +31,7 @@ const ways = [
       "Flexible volunteering options",
       "Recognition for your contributions",
     ],
+    color: "card-coral",
   },
   {
     id: "partner",
@@ -44,6 +45,7 @@ const ways = [
       "Community engagement",
       "Brand visibility with youth audience",
     ],
+    color: "card-purple",
   },
   {
     id: "donate",
@@ -57,6 +59,7 @@ const ways = [
       "Create lasting impact",
       "Tax-deductible contributions",
     ],
+    color: "card-yellow",
   },
 ];
 
@@ -64,21 +67,27 @@ const GetInvolvedPage = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-myg-teal-light via-background to-background">
-        <div className="container-page py-16 md:py-24">
+      <section className="relative py-24 md:py-32 bg-foreground text-background overflow-hidden">
+        <div className="container-page relative z-10">
           <div className="max-w-3xl">
-            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-accent-coral mb-4 block">
               Get Involved
             </span>
-            <h1 className="mb-6">Make a Difference</h1>
-            <p className="text-xl text-muted-foreground">
-              There are many ways to be part of the Multicultural Youth Group community. Whether you want to join as a member, volunteer, partner, or donate, your contribution makes a difference.
+            <h1 className="text-background mb-6">
+              Make a Difference
+            </h1>
+            <p className="text-xl text-background/80">
+              There are many ways to be part of the Multicultural Youth Group community. Your contribution makes a difference.
             </p>
           </div>
         </div>
+        <div className="absolute top-0 right-0 w-1/2 h-full opacity-20">
+          <div className="absolute top-20 right-20 w-64 h-64 bg-accent-coral rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-40 w-96 h-96 bg-primary rounded-full blur-3xl" />
+        </div>
       </section>
 
-      {/* Ways to Get Involved */}
+      {/* Ways to Get Involved - Colorful cards */}
       <Section>
         <SectionHeader
           eyebrow="Join Our Community"
@@ -87,44 +96,40 @@ const GetInvolvedPage = () => {
         />
         <div className="grid md:grid-cols-2 gap-8">
           {ways.map((way) => (
-            <Card key={way.id} id={way.id} className="card-hover border shadow-sm">
-              <CardHeader className="pb-4">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <way.icon className="h-7 w-7 text-primary" />
-                </div>
-                <CardTitle className="text-2xl">{way.title}</CardTitle>
-                <CardDescription className="text-base">
-                  {way.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  {way.benefits.map((benefit, idx) => (
-                    <li key={idx} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary shrink-0" />
-                      <span className="text-muted-foreground">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button className="w-full" asChild>
-                  <Link to="/contact">
-                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
+            <div key={way.id} id={way.id} className={`card-colorful ${way.color} p-10`}>
+              <way.icon className="h-12 w-12 mb-6 opacity-90" />
+              <h3 className="text-2xl font-bold mb-3">{way.title}</h3>
+              <p className="opacity-90 mb-6">{way.description}</p>
+              <ul className="space-y-3 mb-8">
+                {way.benefits.map((benefit, idx) => (
+                  <li key={idx} className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 shrink-0 opacity-80" />
+                    <span className="opacity-90 text-sm">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button
+                variant="secondary"
+                className="w-full rounded-full"
+                asChild
+              >
+                <Link to="/contact">
+                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           ))}
         </div>
       </Section>
 
       {/* Partners Section */}
-      <Section className="bg-secondary">
+      <Section className="bg-muted">
         <SectionHeader
           eyebrow="Our Partners"
           title="Empowering Young People Together"
-          description="Over the years, MYG has had the privilege to work with and collaborate with a diverse range of organisations."
+          description="Over the years, MYG has had the privilege to collaborate with a diverse range of organisations."
         />
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center mb-16">
           {[
             { src: "https://myg.org.au/wp-content/uploads/2023/10/sumali-australian-councel.png", alt: "Somali Australian Council" },
             { src: "https://myg.org.au/wp-content/uploads/2023/10/MelbourneFashionWeek.png", alt: "Melbourne Fashion Week" },
@@ -141,7 +146,7 @@ const GetInvolvedPage = () => {
           ].map((partner) => (
             <div
               key={partner.alt}
-              className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300"
+              className="flex items-center justify-center p-4 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
             >
               <img
                 src={partner.src}
@@ -151,24 +156,26 @@ const GetInvolvedPage = () => {
             </div>
           ))}
         </div>
-        <div className="bg-card rounded-2xl p-8 md:p-12 shadow-lg">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl font-bold mb-4">Become a Partner</h3>
-              <p className="text-muted-foreground mb-6">
-                We're always looking to expand our network of partners and collaborate with new organisations and businesses. If you're interested in learning more about how you can become a partner, please contact us.
+        
+        {/* Partner CTA Card */}
+        <div className="bg-background rounded-3xl shadow-xl overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-0">
+            <div className="p-10 md:p-14">
+              <h3 className="text-3xl font-bold mb-4">Become a Partner</h3>
+              <p className="text-muted-foreground text-lg mb-8">
+                We're always looking to expand our network of partners and collaborate with new organisations and businesses. Contact us to learn more.
               </p>
-              <Button asChild>
+              <Button size="lg" asChild>
                 <Link to="/contact">
-                  Contact Us <ArrowRight className="ml-2 h-4 w-4" />
+                  Contact Us <ArrowUpRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>
-            <div>
+            <div className="relative min-h-[300px]">
               <img
                 src="https://myg.org.au/wp-content/uploads/2023/04/pexels-fauxels-3184301-scaled-830x647.jpg"
                 alt="Partners collaborating"
-                className="w-full h-auto rounded-xl shadow-md"
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
           </div>
@@ -176,11 +183,12 @@ const GetInvolvedPage = () => {
       </Section>
 
       {/* CTA */}
-      <Section className="bg-primary text-primary-foreground">
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-primary-foreground mb-6">Ready to Join Us?</h2>
-          <p className="text-xl text-primary-foreground/90 mb-8">
-            Contact us today to learn more about how you can get involved and make a difference in the lives of multicultural youth.
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-accent-mint to-accent-sky" />
+        <div className="container-page relative z-10 text-center">
+          <h2 className="text-white mb-6">Ready to Join Us?</h2>
+          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+            Contact us today to learn more about how you can get involved and make a difference.
           </p>
           <Button size="lg" variant="secondary" asChild>
             <Link to="/contact">
@@ -188,7 +196,7 @@ const GetInvolvedPage = () => {
             </Link>
           </Button>
         </div>
-      </Section>
+      </section>
     </Layout>
   );
 };
