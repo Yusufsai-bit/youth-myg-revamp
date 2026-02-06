@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import mygLogo from "@/assets/myg-logo.png";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -28,7 +29,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 shrink-0">
             <img
-              src="https://myg.org.au/wp-content/uploads/2019/12/cropped-mgr-logo.png"
+              src={mygLogo}
               alt="Multicultural Youth Group"
               className="h-10 md:h-12 w-auto"
             />

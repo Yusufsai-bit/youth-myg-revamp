@@ -4,6 +4,7 @@ import { Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import mygLogo from "@/assets/myg-logo.png";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -36,7 +37,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
               <img
-                src="https://myg.org.au/wp-content/uploads/2019/12/cropped-mgr-logo.png"
+                src={mygLogo}
                 alt="Multicultural Youth Group"
                 className="h-12 w-auto brightness-0 invert"
               />
