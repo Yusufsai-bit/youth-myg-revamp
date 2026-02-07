@@ -11,6 +11,7 @@ import kanoRavaljiImg from "@/assets/board/kano-ravalji.png";
 import yasminPooleImg from "@/assets/board/yasmin-poole.jpg";
 import leelaGrayImg from "@/assets/board/leela-gray.png";
 import hakanAkyolImg from "@/assets/board/hakan-akyol.png";
+import aynurSimsirelImg from "@/assets/board/aynur-simsirel.png";
 
 interface BoardMember {
   name: string;
@@ -77,6 +78,7 @@ const boardMembers: BoardMember[] = [
     shortSummary: "Education leader and CEO with deep governance experience and a focus on inclusive schooling.",
     bio: "Aynur Simsirel is the CEO of Ilim College and has over 20 years of experience in education leadership and governance. She brings a strong commitment to inclusive schooling and interfaith dialogue, and she understands the role education can play in building belonging, confidence, and opportunity for young people. Aynur's leadership experience supports practical youth development and the conditions young people need to thrive. She contributes a focus on strong governance, organisational sustainability, and programs that are safe, inclusive, and high quality. Aynur is passionate about supporting young people to build leadership skills, strengthen connection across communities, and engage confidently in education, work, and civic life.",
     linkedin: "https://www.linkedin.com/in/aynur-simsirel/",
+    image: aynurSimsirelImg,
   },
   {
     name: "Jamad Hersi",
