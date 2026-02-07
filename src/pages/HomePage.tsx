@@ -183,11 +183,19 @@ const HomePage = () => {
         <PartnersCarousel
           partners={[
             { src: "https://myg.org.au/wp-content/uploads/2023/10/sumali-australian-councel.png", alt: "Somali Australian Council" },
+            { src: "https://myg.org.au/wp-content/uploads/2023/10/MelbourneFashionWeek.png", alt: "Melbourne Fashion Week" },
+            { src: "https://myg.org.au/wp-content/uploads/2023/10/bansic.png", alt: "BANSIC" },
+            { src: "https://myg.org.au/wp-content/uploads/2023/10/himilo-logo.png", alt: "Himilo" },
             { src: "https://myg.org.au/wp-content/uploads/2023/10/Banyule_Logo.png", alt: "Banyule City Council" },
             { src: "https://myg.org.au/wp-content/uploads/2023/10/Melbourne_Victory.png", alt: "Melbourne Victory" },
+            { src: "https://myg.org.au/wp-content/uploads/2023/10/County_Court_of_Victoria.png", alt: "County Court of Victoria" },
+            { src: "https://myg.org.au/wp-content/uploads/2023/10/rcaa-web-logo.png", alt: "RCAA" },
             { src: "https://myg.org.au/wp-content/uploads/2023/10/victoriya-police.png", alt: "Victoria Police" },
+            { src: "https://myg.org.au/wp-content/uploads/2023/10/southern-migrant-and-refugee-center.png", alt: "Southern Migrant and Refugee Centre" },
             { src: "https://myg.org.au/wp-content/uploads/2023/10/Football_Victoria_logo.png", alt: "Football Victoria" },
+            { src: "https://myg.org.au/wp-content/uploads/2023/10/crime-stopers.png", alt: "Crime Stoppers" },
             { src: "https://myg.org.au/wp-content/uploads/2023/10/city-of-darebin.png", alt: "City of Darebin" },
+            { src: "https://myg.org.au/wp-content/uploads/2023/10/small-victoriya.png", alt: "Small Business Victoria" },
           ]}
         />
         <div className="text-center mt-12">
