@@ -32,7 +32,7 @@ const Header = () => {
             <img
               src={mygLogo}
               alt="Multicultural Youth Group"
-              className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-[200px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[320px]"
+              className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto max-w-[240px] sm:max-w-[280px] md:max-w-[320px] lg:max-w-[400px]"
             />
           </Link>
 
