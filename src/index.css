@@ -189,6 +189,31 @@
   .focus-ring {
     @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
   }
+
+  /* Prose styling for legal/content pages */
+  .prose {
+    @apply text-foreground;
+  }
+
+  .prose h2 {
+    @apply text-2xl font-bold mb-4 mt-8 first:mt-0;
+  }
+
+  .prose p {
+    @apply mb-4 text-muted-foreground leading-relaxed;
+  }
+
+  .prose ul {
+    @apply list-disc pl-6 mb-4 space-y-2;
+  }
+
+  .prose li {
+    @apply text-muted-foreground;
+  }
+
+  .prose a {
+    @apply text-primary hover:underline;
+  }
 }
 
 @layer utilities {
