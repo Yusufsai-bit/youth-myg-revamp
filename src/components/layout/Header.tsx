@@ -7,6 +7,7 @@ import mygLogo from "@/assets/myg-logo.png";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
+  { name: "Our People", href: "/our-people" },
   { name: "Programs", href: "/programs" },
   { name: "Get Involved", href: "/get-involved" },
   { name: "Gallery", href: "/gallery" },
