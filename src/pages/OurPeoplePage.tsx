@@ -154,7 +154,7 @@ const BoardMemberCard = ({ member }: { member: BoardMember }) => {
 
         {/* Links */}
         <div className="flex flex-col gap-2 pt-4 border-t border-border">
-          {member.linkedin ? (
+          {member.linkedin && (
             <a
               href={member.linkedin}
               target="_blank"
@@ -164,14 +164,9 @@ const BoardMemberCard = ({ member }: { member: BoardMember }) => {
               <Linkedin className="h-4 w-4" />
               LinkedIn
             </a>
-          ) : (
-            <span className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-              <Linkedin className="h-4 w-4" />
-              LinkedIn link to be added
-            </span>
           )}
 
-          {member.website ? (
+          {member.website && (
             <a
               href={member.website}
               target="_blank"
@@ -181,10 +176,11 @@ const BoardMemberCard = ({ member }: { member: BoardMember }) => {
               <Globe className="h-4 w-4" />
               Website
             </a>
-          ) : (
-            <span className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-              <Globe className="h-4 w-4" />
-              Website link to be added
+          )}
+
+          {!member.linkedin && !member.website && (
+            <span className="text-sm text-muted-foreground">
+              Links to be added
             </span>
           )}
         </div>
@@ -197,13 +193,14 @@ const OurPeoplePage = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/5 via-background to-primary/10 py-20 md:py-28 lg:py-32">
-        <div className="container-page">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+      <section className="relative bg-gradient-to-br from-myg-teal-light via-background to-background">
+        <div className="container-page py-16 md:py-24">
+          <div className="max-w-3xl">
+            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
               Our People
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            </span>
+            <h1 className="mb-6">Meet the Board</h1>
+            <p className="text-xl text-muted-foreground">
               A dedicated Board supporting multicultural young people to connect, grow and lead.
             </p>
           </div>
