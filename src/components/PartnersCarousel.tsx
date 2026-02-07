@@ -69,7 +69,7 @@ const PartnersCarousel = ({ partners }: PartnersCarouselProps) => {
             <img
               src={partner.src}
               alt={partner.alt}
-              className="h-12 md:h-14 w-auto object-contain"
+              className="h-16 md:h-20 lg:h-24 w-auto object-contain"
             />
           </div>
         ))}
