@@ -124,7 +124,7 @@ const GetInvolvedPage = () => {
           title="Empowering Young People Together"
           description="Over the years, MYG has had the privilege to work with and collaborate with a diverse range of organisations."
         />
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center mb-12">
           {[
             { src: "https://myg.org.au/wp-content/uploads/2023/10/sumali-australian-councel.png", alt: "Somali Australian Council" },
             { src: "https://myg.org.au/wp-content/uploads/2023/10/MelbourneFashionWeek.png", alt: "Melbourne Fashion Week" },
@@ -138,6 +138,8 @@ const GetInvolvedPage = () => {
             { src: "https://myg.org.au/wp-content/uploads/2023/10/southern-migrant-and-refugee-center.png", alt: "Southern Migrant and Refugee Centre" },
             { src: "https://myg.org.au/wp-content/uploads/2023/10/Football_Victoria_logo.png", alt: "Football Victoria" },
             { src: "https://myg.org.au/wp-content/uploads/2023/10/crime-stopers.png", alt: "Crime Stoppers" },
+            { src: "https://myg.org.au/wp-content/uploads/2023/10/city-of-darebin.png", alt: "City of Darebin" },
+            { src: "https://myg.org.au/wp-content/uploads/2023/10/small-victoriya.png", alt: "Small Business Victoria" },
           ].map((partner) => (
             <div
               key={partner.alt}
