@@ -5,6 +5,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp, Linkedin, Globe } from "lucide-react";
 
+// Board member images
+import tasneemChopraImg from "@/assets/board/tasneem-chopra.jpg";
+
 interface BoardMember {
   name: string;
   role: string;
@@ -12,6 +15,7 @@ interface BoardMember {
   bio: string;
   linkedin?: string;
   website?: string;
+  image?: string;
 }
 
 const boardMembers: BoardMember[] = [
@@ -57,6 +61,7 @@ const boardMembers: BoardMember[] = [
     bio: "Tasneem Chopra is a cross cultural consultant who addresses issues of equity and belonging through an intersectional lens across government, corporate, arts and not for profit sectors within Australia and overseas. She supports organisations with diversity and inclusion policy as an industry expert, delivers workshops, curates exhibitions and promotes social change towards greater cultural inclusion. Tasneem is also an accomplished MC and keynote speaker. As a commentator her expertise has been sought on leadership, cultural inclusion, gender justice, intersectionality, migration, social cohesion and social justice. For her efforts she was appointed inaugural Ambassador for Women of Colour, Australia, is a former Anti Racism Champion with the Australian Human Rights Commission and was awarded an Order of Australia Medal.",
     linkedin: "https://www.linkedin.com/in/tasneemchopra/",
     website: "https://tasneemchopra.com/",
+    image: tasneemChopraImg,
   },
   {
     name: "Aynur Simsirel",
@@ -79,16 +84,24 @@ const BoardMemberCard = ({ member }: { member: BoardMember }) => {
 
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-      {/* Image Placeholder */}
-      <div className="aspect-[4/5] bg-muted flex items-center justify-center">
-        <div className="text-center p-4">
-          <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-muted-foreground/10 flex items-center justify-center">
-            <span className="text-4xl text-muted-foreground/40">
-              {member.name.charAt(0)}
-            </span>
+      {/* Image or Placeholder */}
+      <div className="aspect-[4/5] bg-muted flex items-center justify-center overflow-hidden">
+        {member.image ? (
+          <img
+            src={member.image}
+            alt={member.name}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div className="text-center p-4">
+            <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-muted-foreground/10 flex items-center justify-center">
+              <span className="text-4xl text-muted-foreground/40">
+                {member.name.charAt(0)}
+              </span>
+            </div>
+            <p className="text-sm text-muted-foreground">Image coming soon</p>
           </div>
-          <p className="text-sm text-muted-foreground">Image coming soon</p>
-        </div>
+        )}
       </div>
 
       <CardContent className="p-6">
