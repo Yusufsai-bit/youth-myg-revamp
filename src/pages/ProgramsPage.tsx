@@ -130,7 +130,7 @@ const ProgramsPage = () => {
               <img
                 src={
                   idx === 0
-                    ? "https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-3.31.14-PM-1.jpeg"
+                    ? "https://myg.org.au/wp-content/uploads/2023/10/Multicultural-Leadership-in-Action-1.jpg"
                     : idx === 1
                     ? "https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-3.30.57-PM.jpeg"
                     : "https://myg.org.au/wp-content/uploads/2023/04/pexels-fauxels-3184301-scaled-830x647.jpg"
