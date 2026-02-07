@@ -144,11 +144,11 @@ const HomePage = () => {
               alt: "MYG member at Western Bulldogs Youth Expo",
             },
             {
-              image: "https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-3.31.14-PM-1.jpeg",
+              image: "https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-4.05.21-PM.jpeg",
               alt: "MYG members engaging at event",
             },
             {
-              image: "https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-3.31.13-PM.jpeg",
+              image: "https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-3.41.32-PM.jpeg",
               alt: "MYG community gathering",
             },
             {
