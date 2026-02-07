@@ -112,7 +112,7 @@ const AboutPage = () => {
           <div className="text-center">
             <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
               <img
-                src="https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-3.32.41-PM.jpeg"
+                src="https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-3.31.18-PM.jpeg"
                 alt="MYG member"
                 className="w-full h-full object-cover"
               />
@@ -125,7 +125,7 @@ const AboutPage = () => {
           <div className="text-center">
             <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
               <img
-                src="https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-3.30.57-PM.jpeg"
+                src="https://myg.org.au/wp-content/uploads/2023/10/Multicultural-Leadership-in-Action-1.jpg"
                 alt="MYG volunteers"
                 className="w-full h-full object-cover"
               />
@@ -138,7 +138,7 @@ const AboutPage = () => {
           <div className="text-center">
             <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
               <img
-                src="https://myg.org.au/wp-content/uploads/2023/04/pexels-fauxels-3184301-scaled-830x647.jpg"
+                src="https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-3.32.02-PM.jpeg"
                 alt="MYG mentors"
                 className="w-full h-full object-cover"
               />
