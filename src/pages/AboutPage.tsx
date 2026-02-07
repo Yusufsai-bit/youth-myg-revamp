@@ -112,8 +112,8 @@ const AboutPage = () => {
           <div className="text-center">
             <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
               <img
-                src="https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-3.31.18-PM.jpeg"
-                alt="MYG member"
+                src="https://myg.org.au/wp-content/uploads/2023/10/Welcoming-Australia.jpg"
+                alt="MYG member at Welcoming Australia symposium"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -125,8 +125,8 @@ const AboutPage = () => {
           <div className="text-center">
             <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
               <img
-                src="https://myg.org.au/wp-content/uploads/2023/10/Multicultural-Leadership-in-Action-1.jpg"
-                alt="MYG volunteers"
+                src="https://myg.org.au/wp-content/uploads/2023/10/Victorian-Mosque-Open-Day-1.jpg"
+                alt="MYG volunteers at Victorian Mosque Open Day"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -138,8 +138,8 @@ const AboutPage = () => {
           <div className="text-center">
             <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
               <img
-                src="https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-3.32.02-PM.jpeg"
-                alt="MYG mentors"
+                src="https://myg.org.au/wp-content/uploads/2023/10/Parliament-Youth-Forum-1.jpg"
+                alt="MYG mentors at Parliament Youth Forum"
                 className="w-full h-full object-cover"
               />
             </div>
