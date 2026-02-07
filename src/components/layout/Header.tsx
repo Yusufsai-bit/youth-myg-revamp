@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import mygLogo from "@/assets/myg-logo.png";
+import mygLogo from "@/assets/myg-logo-new.png";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -32,7 +32,7 @@ const Header = () => {
             <img
               src={mygLogo}
               alt="Multicultural Youth Group"
-              className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto"
+              className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-[200px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[320px]"
             />
           </Link>
 

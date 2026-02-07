@@ -4,7 +4,7 @@ import { Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import mygLogo from "@/assets/myg-logo.png";
+import mygLogo from "@/assets/myg-logo-new.png";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -39,7 +39,7 @@ const Footer = () => {
               <img
                 src={mygLogo}
                 alt="Multicultural Youth Group"
-                className="h-12 w-auto brightness-0 invert"
+                className="h-10 sm:h-12 md:h-14 w-auto max-w-[180px] sm:max-w-[220px] md:max-w-[260px] brightness-0 invert"
               />
             </Link>
             <p className="text-background/70 text-sm leading-relaxed mb-6">
