@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Mail, MapPin, Send } from "lucide-react";
 import { z } from "zod";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -106,6 +107,11 @@ const ContactPage = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Multicultural Youth Group. Contact us to learn more about our programs or how to get involved."
+        url="/contact"
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-myg-teal-light via-background to-background">
         <div className="container-page py-16 md:py-24">

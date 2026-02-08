@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Lightbulb, Heart, Award, Star } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Card, CardContent } from "@/components/ui/card";
@@ -64,6 +65,11 @@ const programs = [
 const ProgramsPage = () => {
   return (
     <Layout>
+      <SEO
+        title="Programs"
+        description="Explore MYG programs: Leadership Training, Volunteer Connect, and MentorMax. Develop skills and make a difference in your community."
+        url="/programs"
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-myg-teal-light via-background to-background">
         <div className="container-page py-16 md:py-24">
