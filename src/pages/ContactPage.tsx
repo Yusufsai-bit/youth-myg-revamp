@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail, MapPin, Send } from "lucide-react";
+import { z } from "zod";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,29 +10,84 @@ import { Section, SectionHeader } from "@/components/ui/section";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 
+// Validation schema for contact form
+const contactFormSchema = z.object({
+  name: z
+    .string()
+    .trim()
+    .min(1, "Name is required")
+    .max(100, "Name must be less than 100 characters"),
+  email: z
+    .string()
+    .trim()
+    .min(1, "Email is required")
+    .email("Please enter a valid email address")
+    .max(255, "Email must be less than 255 characters"),
+  subject: z
+    .string()
+    .trim()
+    .min(1, "Subject is required")
+    .max(200, "Subject must be less than 200 characters"),
+  message: z
+    .string()
+    .trim()
+    .min(1, "Message is required")
+    .max(2000, "Message must be less than 2000 characters"),
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
+
 const ContactPage = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
+  const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    if (errors[name as keyof ContactFormData]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form data using zod schema
+    const result = contactFormSchema.safeParse(formData);
+    
+    if (!result.success) {
+      const fieldErrors: Partial<Record<keyof ContactFormData, string>> = {};
+      result.error.errors.forEach((error) => {
+        const field = error.path[0] as keyof ContactFormData;
+        if (!fieldErrors[field]) {
+          fieldErrors[field] = error.message;
+        }
+      });
+      setErrors(fieldErrors);
+      toast({
+        title: "Validation Error",
+        description: "Please check the form for errors.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
+    setErrors({});
 
     // Simulate form submission - connect to backend later
     // Form will send to info@myg.org.au when connected
+    // Note: Server-side validation will be required when backend is added
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     toast({
@@ -172,8 +228,12 @@ const ContactPage = () => {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="Your name"
-                        required
+                        maxLength={100}
+                        aria-invalid={!!errors.name}
                       />
+                      {errors.name && (
+                        <p className="text-sm text-destructive">{errors.name}</p>
+                      )}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
@@ -184,8 +244,12 @@ const ContactPage = () => {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="your@email.com"
-                        required
+                        maxLength={255}
+                        aria-invalid={!!errors.email}
                       />
+                      {errors.email && (
+                        <p className="text-sm text-destructive">{errors.email}</p>
+                      )}
                     </div>
                   </div>
                   <div className="space-y-2">
@@ -196,8 +260,12 @@ const ContactPage = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       placeholder="What is this about?"
-                      required
+                      maxLength={200}
+                      aria-invalid={!!errors.subject}
                     />
+                    {errors.subject && (
+                      <p className="text-sm text-destructive">{errors.subject}</p>
+                    )}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="message">Message</Label>
@@ -208,8 +276,12 @@ const ContactPage = () => {
                       onChange={handleChange}
                       placeholder="Your message..."
                       rows={6}
-                      required
+                      maxLength={2000}
+                      aria-invalid={!!errors.message}
                     />
+                    {errors.message && (
+                      <p className="text-sm text-destructive">{errors.message}</p>
+                    )}
                   </div>
                   <Button type="submit" size="lg" disabled={isSubmitting}>
                     {isSubmitting ? (
