@@ -6,8 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Card, CardContent } from "@/components/ui/card";
 
+// Import hero image
+import heroImage from "@/assets/home/myg-hero-filming.png";
 // Import verified gallery images for reliability
-import bulldogsExpo from "@/assets/gallery/bulldogs-expo-1.jpeg";
 import banyuleFestival1 from "@/assets/gallery/banyule-festival-1.jpeg";
 import banyuleFestival2 from "@/assets/gallery/banyule-festival-2.jpeg";
 import referendumSession from "@/assets/gallery/referendum-session-1.jpeg";
@@ -47,8 +48,8 @@ const HomePage = () => {
             </div>
             <div className="relative animate-fade-in animation-delay-400">
               <img
-                src={bulldogsExpo}
-                alt="Multicultural Youth Group members at Western Bulldogs Youth Expo"
+                src={heroImage}
+                alt="MYG member being filmed at community event booth"
                 className="w-full h-auto rounded-2xl shadow-2xl"
                 width={800}
                 height={600}
