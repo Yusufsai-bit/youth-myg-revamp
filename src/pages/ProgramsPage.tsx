@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Lightbulb, Heart, Award, Users, Star, BookOpen } from "lucide-react";
+import { ArrowRight, Lightbulb, Heart, Award, Star } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Card, CardContent } from "@/components/ui/card";
+
+// Import local program images
+import leadershipTrainingImg from "@/assets/programs/leadership-training.jpg";
+import volunteerConnectImg from "@/assets/programs/volunteer-connect.jpeg";
+import mentorMaxImg from "@/assets/programs/mentormax.jpg";
 
 const programs = [
   {
@@ -20,6 +25,7 @@ const programs = [
       "Problem-solving and decision making",
       "Networking opportunities with other young leaders",
     ],
+    image: leadershipTrainingImg,
   },
   {
     id: "volunteer-connect",
@@ -35,6 +41,7 @@ const programs = [
       "Recognition for volunteer contributions",
       "Networking with community organisations",
     ],
+    image: volunteerConnectImg,
   },
   {
     id: "mentormax",
@@ -50,6 +57,7 @@ const programs = [
       "Goal setting and accountability",
       "Networking and professional connections",
     ],
+    image: mentorMaxImg,
   },
 ];
 
@@ -128,13 +136,7 @@ const ProgramsPage = () => {
             </div>
             <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
               <img
-                src={
-                  idx === 0
-                    ? "https://myg.org.au/wp-content/uploads/2023/10/Multicultural-Leadership-in-Action-1.jpg"
-                    : idx === 1
-                    ? "https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-3.30.57-PM.jpeg"
-                    : "https://myg.org.au/wp-content/uploads/2023/04/pexels-fauxels-3184301-scaled-830x647.jpg"
-                }
+                src={program.image}
                 alt={program.title}
                 className="w-full h-auto rounded-2xl shadow-xl"
               />
