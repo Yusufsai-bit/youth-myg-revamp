@@ -40,6 +40,8 @@ import religiousWorkshop1 from "@/assets/gallery/religious-workshop-1.jpg";
 import religiousWorkshop2 from "@/assets/gallery/religious-workshop-2.jpg";
 import honourRoll from "@/assets/gallery/honour-roll.jpg";
 import electoralRoundtable1 from "@/assets/gallery/electoral-roundtable-1.jpg";
+import welcomingAustralia from "@/assets/gallery/welcoming-australia.jpg";
+import mosqueOpenDay1 from "@/assets/gallery/mosque-open-day-1.jpg";
 
 // Gallery images with captions exactly as on MYG site
 const galleryImages = [
@@ -79,6 +81,8 @@ const galleryImages = [
   { id: 34, src: religiousWorkshop2, caption: "Religious Identity Workshop – MYG held a recent workshop for multicultural youth, requested by our incredible community." },
   { id: 35, src: honourRoll, caption: "VIC Multicultural Honour Roll – MYG was invited to attend the Multicultural Honour Roll event, where our ambassador Sh.alaa was present. It was a great night of recognizing community contributions." },
   { id: 36, src: electoralRoundtable1, caption: "Victorian Electoral Committee Roundtable – MYG was invited to a roundtable to discuss the low voting figures in our communities and ways to make voting more accessible to our communities." },
+  { id: 37, src: welcomingAustralia, caption: "Welcoming Australia Symposium – MYG members participated in the Welcoming Australia symposium, sharing insights on multicultural inclusion and community building." },
+  { id: 38, src: mosqueOpenDay1, caption: "Victorian Mosque Open Day – MYG volunteers supported the Victorian Mosque Open Day, welcoming visitors and promoting intercultural understanding." },
 ];
 
 const GalleryPage = () => {

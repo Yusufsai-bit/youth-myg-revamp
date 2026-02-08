@@ -5,6 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Card, CardContent } from "@/components/ui/card";
 
+// Import local images
+import mygEvent1 from "@/assets/home/myg-event-1.jpeg";
+import welcomingAustralia from "@/assets/gallery/welcoming-australia.jpg";
+import mosqueOpenDay from "@/assets/gallery/mosque-open-day-1.jpg";
+import parliamentForum1 from "@/assets/gallery/parliament-forum-1.jpg";
+
 const AboutPage = () => {
   return (
     <Layout>
@@ -42,7 +48,7 @@ const AboutPage = () => {
           </div>
           <div className="relative">
             <img
-              src="https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-3.31.14-PM-1.jpeg"
+              src={mygEvent1}
               alt="MYG members at an event"
               className="w-full h-auto rounded-2xl shadow-xl"
             />
@@ -112,7 +118,7 @@ const AboutPage = () => {
           <div className="text-center">
             <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
               <img
-                src="https://myg.org.au/wp-content/uploads/2023/10/Welcoming-Australia.jpg"
+                src={welcomingAustralia}
                 alt="MYG member at Welcoming Australia symposium"
                 className="w-full h-full object-cover"
               />
@@ -125,7 +131,7 @@ const AboutPage = () => {
           <div className="text-center">
             <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
               <img
-                src="https://myg.org.au/wp-content/uploads/2023/10/Victorian-Mosque-Open-Day-1.jpg"
+                src={mosqueOpenDay}
                 alt="MYG volunteers at Victorian Mosque Open Day"
                 className="w-full h-full object-cover"
               />
@@ -138,7 +144,7 @@ const AboutPage = () => {
           <div className="text-center">
             <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
               <img
-                src="https://myg.org.au/wp-content/uploads/2023/10/Parliament-Youth-Forum-1.jpg"
+                src={parliamentForum1}
                 alt="MYG mentors at Parliament Youth Forum"
                 className="w-full h-full object-cover"
               />

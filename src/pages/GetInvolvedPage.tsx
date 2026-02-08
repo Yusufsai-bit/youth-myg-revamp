@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
+// Import local images
+import mygEvent1 from "@/assets/home/myg-event-1.jpeg";
+
 const ways = [
   {
     id: "member",
@@ -124,41 +127,15 @@ const GetInvolvedPage = () => {
           title="Empowering Young People Together"
           description="Over the years, MYG has had the privilege to work with and collaborate with a diverse range of organisations."
         />
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center mb-12">
-          {[
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/sumali-australian-councel.png", alt: "Somali Australian Council" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/MelbourneFashionWeek.png", alt: "Melbourne Fashion Week" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/bansic.png", alt: "BANSIC" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/himilo-logo.png", alt: "Himilo" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/Banyule_Logo.png", alt: "Banyule City Council" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/Melbourne_Victory.png", alt: "Melbourne Victory" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/County_Court_of_Victoria.png", alt: "County Court of Victoria" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/rcaa-web-logo.png", alt: "RCAA" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/victoriya-police.png", alt: "Victoria Police" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/southern-migrant-and-refugee-center.png", alt: "Southern Migrant and Refugee Centre" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/Football_Victoria_logo.png", alt: "Football Victoria" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/crime-stopers.png", alt: "Crime Stoppers" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/city-of-darebin.png", alt: "City of Darebin" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/small-victoriya.png", alt: "Small Business Victoria" },
-          ].map((partner) => (
-            <div
-              key={partner.alt}
-              className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300"
-            >
-              <img
-                src={partner.src}
-                alt={partner.alt}
-                className="max-h-12 w-auto object-contain"
-              />
-            </div>
-          ))}
-        </div>
         <div className="bg-card rounded-2xl p-8 md:p-12 shadow-lg">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold mb-4">Become a Partner</h3>
               <p className="text-muted-foreground mb-6">
                 We're always looking to expand our network of partners and collaborate with new organisations and businesses. If you're interested in learning more about how you can become a partner, please contact us.
+              </p>
+              <p className="text-muted-foreground mb-6">
+                Our partners include Somali Australian Council, Melbourne Fashion Week, BANSIC, Himilo, Banyule City Council, Melbourne Victory, County Court of Victoria, RCAA, Victoria Police, Southern Migrant and Refugee Centre, Football Victoria, Crime Stoppers, City of Darebin, and Small Business Victoria.
               </p>
               <Button asChild>
                 <Link to="/contact">
@@ -168,8 +145,8 @@ const GetInvolvedPage = () => {
             </div>
             <div>
               <img
-                src="https://myg.org.au/wp-content/uploads/2023/04/pexels-fauxels-3184301-scaled-830x647.jpg"
-                alt="Partners collaborating"
+                src={mygEvent1}
+                alt="MYG partners collaborating"
                 className="w-full h-auto rounded-xl shadow-md"
               />
             </div>
