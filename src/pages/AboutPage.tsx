@@ -8,8 +8,8 @@ import { Card, CardContent } from "@/components/ui/card";
 
 // Import local images
 import mygEvent1 from "@/assets/home/myg-event-1.jpeg";
-import welcomingAustralia from "@/assets/gallery/welcoming-australia.jpg";
-import mosqueOpenDay from "@/assets/gallery/mosque-open-day-1.jpg";
+import youthCamp1 from "@/assets/gallery/youth-camp-1.jpg";
+import soccerTournament1 from "@/assets/gallery/soccer-tournament-1.jpg";
 import parliamentForum1 from "@/assets/gallery/parliament-forum-1.jpg";
 
 const AboutPage = () => {
@@ -124,8 +124,8 @@ const AboutPage = () => {
           <div className="text-center">
             <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
               <img
-                src={welcomingAustralia}
-                alt="MYG member at Welcoming Australia symposium"
+                src={youthCamp1}
+                alt="MYG members at youth camp"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -137,8 +137,8 @@ const AboutPage = () => {
           <div className="text-center">
             <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
               <img
-                src={mosqueOpenDay}
-                alt="MYG volunteers at Victorian Mosque Open Day"
+                src={soccerTournament1}
+                alt="MYG volunteers at soccer tournament"
                 className="w-full h-full object-cover"
               />
             </div>
