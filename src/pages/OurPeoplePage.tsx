@@ -104,6 +104,9 @@ const BoardMemberCard = ({ member }: { member: BoardMember }) => {
             src={member.image}
             alt={member.name}
             className="w-full h-full object-cover"
+            width={400}
+            height={500}
+            loading="lazy"
           />
         ) : (
           <div className="text-center p-4">

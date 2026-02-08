@@ -57,6 +57,9 @@ const AboutPage = () => {
               src={mygEvent1}
               alt="MYG members at an event"
               className="w-full h-auto rounded-2xl shadow-xl"
+              width={800}
+              height={600}
+              loading="lazy"
             />
           </div>
         </div>
@@ -127,6 +130,9 @@ const AboutPage = () => {
                 src={youthCamp1}
                 alt="MYG members at youth camp"
                 className="w-full h-full object-cover"
+                width={192}
+                height={192}
+                loading="lazy"
               />
             </div>
             <h4 className="text-xl font-semibold mb-2">Our Members</h4>
@@ -140,6 +146,9 @@ const AboutPage = () => {
                 src={soccerTournament1}
                 alt="MYG volunteers at soccer tournament"
                 className="w-full h-full object-cover"
+                width={192}
+                height={192}
+                loading="lazy"
               />
             </div>
             <h4 className="text-xl font-semibold mb-2">Our Volunteers</h4>
@@ -153,6 +162,9 @@ const AboutPage = () => {
                 src={parliamentForum1}
                 alt="MYG mentors at Parliament Youth Forum"
                 className="w-full h-full object-cover"
+                width={192}
+                height={192}
+                loading="lazy"
               />
             </div>
             <h4 className="text-xl font-semibold mb-2">Our Mentors</h4>

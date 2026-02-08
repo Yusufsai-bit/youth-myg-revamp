@@ -145,6 +145,9 @@ const ProgramsPage = () => {
                 src={program.image}
                 alt={program.title}
                 className="w-full h-auto rounded-2xl shadow-xl"
+                width={800}
+                height={600}
+                loading="lazy"
               />
             </div>
           </div>
