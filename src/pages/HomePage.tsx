@@ -46,13 +46,13 @@ const HomePage = () => {
                 </Button>
               </div>
             </div>
-            <div className="relative animate-fade-in animation-delay-400">
+            <div className="relative animate-fade-in animation-delay-400 flex justify-end">
               <img
                 src={heroImage}
                 alt="MYG member being filmed at community event booth"
-                className="w-full h-auto rounded-2xl shadow-2xl"
-                width={800}
-                height={600}
+                className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-auto rounded-2xl shadow-2xl object-cover"
+                width={600}
+                height={400}
                 loading="eager"
               />
             </div>
