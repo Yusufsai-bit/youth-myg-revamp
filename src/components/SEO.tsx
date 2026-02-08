@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { Head } from "vite-react-ssg";
 
 interface SEOProps {
   title?: string;
@@ -25,7 +25,7 @@ const SEO = ({
   const imageUrl = image.startsWith("http") ? image : `${SITE_URL}${image}`;
 
   return (
-    <Helmet>
+    <Head>
       {/* Primary Meta Tags */}
       <title>{pageTitle}</title>
       <meta name="title" content={pageTitle} />
@@ -47,7 +47,7 @@ const SEO = ({
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
-    </Helmet>
+    </Head>
   );
 };
 
