@@ -63,7 +63,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+            className="lg:hidden p-3 min-w-[44px] min-h-[44px] rounded-lg hover:bg-muted transition-colors flex items-center justify-center"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
@@ -83,7 +83,7 @@ const Header = () => {
                   key={link.name}
                   to={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`px-4 py-3 text-base font-medium rounded-lg transition-colors ${
+                  className={`px-4 py-3 min-h-[44px] text-base font-medium rounded-lg transition-colors flex items-center ${
                     isActive(link.href)
                       ? "text-primary bg-primary/10"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"

@@ -154,6 +154,9 @@ const GetInvolvedPage = () => {
                 src={mygEvent1}
                 alt="MYG partners collaborating"
                 className="w-full h-auto rounded-xl shadow-md"
+                width={600}
+                height={400}
+                loading="lazy"
               />
             </div>
           </div>
