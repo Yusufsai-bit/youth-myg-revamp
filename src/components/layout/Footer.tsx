@@ -1,20 +1,56 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import mygLogo from "@/assets/myg-logo-new.png";
 
+// Validation schema for newsletter form
+const newsletterSchema = z.object({
+  name: z
+    .string()
+    .trim()
+    .min(1, "Name is required")
+    .max(100, "Name must be less than 100 characters"),
+  email: z
+    .string()
+    .trim()
+    .min(1, "Email is required")
+    .email("Please enter a valid email address")
+    .max(255, "Email must be less than 255 characters"),
+});
+
+type NewsletterFormData = z.infer<typeof newsletterSchema>;
+
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<Partial<Record<keyof NewsletterFormData, string>>>({});
   const { toast } = useToast();
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form data using zod schema
+    const result = newsletterSchema.safeParse({ name, email });
+    
+    if (!result.success) {
+      const fieldErrors: Partial<Record<keyof NewsletterFormData, string>> = {};
+      result.error.errors.forEach((error) => {
+        const field = error.path[0] as keyof NewsletterFormData;
+        if (!fieldErrors[field]) {
+          fieldErrors[field] = error.message;
+        }
+      });
+      setErrors(fieldErrors);
+      return;
+    }
+
     setIsSubmitting(true);
+    setErrors({});
     
     // Simulate form submission - connect to backend later
     await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -129,22 +165,40 @@ const Footer = () => {
               Subscribe to our newsletter for updates on programs and events.
             </p>
             <form onSubmit={handleNewsletterSubmit} className="space-y-3">
-              <Input
-                type="text"
-                placeholder="Your name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                className="bg-background/10 border-background/20 text-background placeholder:text-background/50"
-              />
-              <Input
-                type="email"
-                placeholder="Your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="bg-background/10 border-background/20 text-background placeholder:text-background/50"
-              />
+              <div>
+                <Input
+                  type="text"
+                  placeholder="Your name"
+                  value={name}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                    if (errors.name) setErrors((prev) => ({ ...prev, name: undefined }));
+                  }}
+                  maxLength={100}
+                  className="bg-background/10 border-background/20 text-background placeholder:text-background/50"
+                  aria-invalid={!!errors.name}
+                />
+                {errors.name && (
+                  <p className="text-sm text-destructive mt-1">{errors.name}</p>
+                )}
+              </div>
+              <div>
+                <Input
+                  type="email"
+                  placeholder="Your email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (errors.email) setErrors((prev) => ({ ...prev, email: undefined }));
+                  }}
+                  maxLength={255}
+                  className="bg-background/10 border-background/20 text-background placeholder:text-background/50"
+                  aria-invalid={!!errors.email}
+                />
+                {errors.email && (
+                  <p className="text-sm text-destructive mt-1">{errors.email}</p>
+                )}
+              </div>
               <Button
                 type="submit"
                 disabled={isSubmitting}
