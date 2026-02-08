@@ -1,9 +1,15 @@
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { Section } from "@/components/ui/section";
 
 const PrivacyPage = () => {
   return (
     <Layout>
+      <SEO
+        title="Privacy Policy"
+        description="Learn how MYG collects, uses, and protects your personal information."
+        url="/privacy"
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-myg-teal-light via-background to-background">
         <div className="container-page py-16 md:py-24">

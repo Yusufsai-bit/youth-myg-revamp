@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -192,6 +193,11 @@ const BoardMemberCard = ({ member }: { member: BoardMember }) => {
 const OurPeoplePage = () => {
   return (
     <Layout>
+      <SEO
+        title="Our People"
+        description="Meet the MYG Board - experienced leaders from policy, education, community development, and advocacy guiding our mission."
+        url="/our-people"
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-myg-teal-light via-background to-background">
         <div className="container-page py-16 md:py-24">

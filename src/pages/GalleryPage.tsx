@@ -1,6 +1,7 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { Section, SectionHeader } from "@/components/ui/section";
 
 // Import local gallery images
@@ -88,6 +89,9 @@ const galleryImages = [
 const GalleryPage = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const isLightboxOpen = selectedIndex !== null;
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const minSwipeDistance = 50;
 
   const openLightbox = (index: number) => {
     setSelectedIndex(index);
@@ -108,6 +112,34 @@ const GalleryPage = () => {
     if (selectedIndex === null) return;
     setSelectedIndex(selectedIndex === galleryImages.length - 1 ? 0 : selectedIndex + 1);
   }, [selectedIndex]);
+
+  // Touch handlers for swipe gestures
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchEndX.current = null;
+  }, []);
+
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  }, []);
+
+  const handleTouchEnd = useCallback(() => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    
+    const distance = touchStartX.current - touchEndX.current;
+    const isSwipe = Math.abs(distance) > minSwipeDistance;
+    
+    if (isSwipe) {
+      if (distance > 0) {
+        goToNext(); // Swipe left = next
+      } else {
+        goToPrevious(); // Swipe right = previous
+      }
+    }
+    
+    touchStartX.current = null;
+    touchEndX.current = null;
+  }, [goToNext, goToPrevious]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -135,6 +167,12 @@ const GalleryPage = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Gallery"
+        description="Browse photos from MYG events, youth camps, community programs, and multicultural gatherings across Victoria."
+        url="/gallery"
+      />
+      
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-myg-teal-light via-background to-background">
         <div className="container-page py-16 md:py-24">
@@ -155,25 +193,28 @@ const GalleryPage = () => {
         <SectionHeader
           eyebrow="Photos"
           title="Event Gallery"
-          description="Click on any image to view it in full screen."
+          description="Click on any image to view it in full screen. Swipe or use arrow keys to navigate."
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
           {galleryImages.map((image, index) => (
             <button
               key={image.id}
               onClick={() => openLightbox(index)}
-              className="group relative aspect-[3/4] overflow-hidden rounded-xl bg-muted focus-ring"
+              className="group relative aspect-[3/4] overflow-hidden rounded-xl bg-muted focus-ring min-h-[44px]"
+              aria-label={`View ${image.caption.split(" – ")[0]}`}
             >
               <img
                 src={image.src}
-                alt={`Gallery image ${index + 1}`}
+                alt={image.caption.split(" – ")[0]}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
+                width={300}
+                height={400}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <p className="text-background text-sm line-clamp-2">
-                    {image.caption}
+                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
+                  <p className="text-background text-xs sm:text-sm line-clamp-2">
+                    {image.caption.split(" – ")[0]}
                   </p>
                 </div>
               </div>
@@ -187,11 +228,17 @@ const GalleryPage = () => {
         <div
           className="fixed inset-0 z-50 bg-foreground/95 backdrop-blur-sm animate-fade-in"
           onClick={closeLightbox}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image gallery lightbox"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           {/* Close button */}
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 z-10 p-3 rounded-full bg-background/10 hover:bg-background/20 text-background transition-colors"
+            className="absolute top-4 right-4 z-10 p-3 rounded-full bg-background/10 hover:bg-background/20 text-background transition-colors min-w-[44px] min-h-[44px]"
             aria-label="Close gallery"
           >
             <X className="h-6 w-6" />
@@ -202,13 +249,13 @@ const GalleryPage = () => {
             {selectedIndex + 1} of {galleryImages.length}
           </div>
 
-          {/* Navigation buttons */}
+          {/* Navigation buttons - hidden on mobile, use swipe instead */}
           <button
             onClick={(e) => {
               e.stopPropagation();
               goToPrevious();
             }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-background/10 hover:bg-background/20 text-background transition-colors"
+            className="hidden sm:block absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-background/10 hover:bg-background/20 text-background transition-colors min-w-[44px] min-h-[44px]"
             aria-label="Previous image"
           >
             <ChevronLeft className="h-8 w-8" />
@@ -219,11 +266,16 @@ const GalleryPage = () => {
               e.stopPropagation();
               goToNext();
             }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-background/10 hover:bg-background/20 text-background transition-colors"
+            className="hidden sm:block absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-background/10 hover:bg-background/20 text-background transition-colors min-w-[44px] min-h-[44px]"
             aria-label="Next image"
           >
             <ChevronRight className="h-8 w-8" />
           </button>
+
+          {/* Swipe hint on mobile */}
+          <div className="sm:hidden absolute bottom-4 left-1/2 -translate-x-1/2 z-10 px-4 py-2 rounded-full bg-background/10 text-background text-xs">
+            Swipe to navigate
+          </div>
 
           {/* Main content */}
           <div
@@ -240,8 +292,8 @@ const GalleryPage = () => {
             </div>
 
             {/* Caption */}
-            <div className="mt-6 max-w-2xl text-center">
-              <p className="text-background/90 text-lg">
+            <div className="mt-6 max-w-2xl text-center px-4">
+              <p className="text-background/90 text-base sm:text-lg">
                 {currentImage.caption}
               </p>
             </div>

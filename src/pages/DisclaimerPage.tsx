@@ -1,9 +1,15 @@
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { Section } from "@/components/ui/section";
 
 const DisclaimerPage = () => {
   return (
     <Layout>
+      <SEO
+        title="Disclaimer"
+        description="Terms and conditions for using the MYG website."
+        url="/disclaimer"
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-myg-teal-light via-background to-background">
         <div className="container-page py-16 md:py-24">

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Target, Eye, Users, CheckCircle } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,6 +15,11 @@ import parliamentForum1 from "@/assets/gallery/parliament-forum-1.jpg";
 const AboutPage = () => {
   return (
     <Layout>
+      <SEO
+        title="About Us"
+        description="Learn about Multicultural Youth Group (MYG), a dynamic platform for Victoria's culturally diverse youth to connect, lead, and make a difference."
+        url="/about"
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-myg-teal-light via-background to-background">
         <div className="container-page py-16 md:py-24">

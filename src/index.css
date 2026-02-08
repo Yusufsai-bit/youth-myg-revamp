@@ -6,7 +6,7 @@
    Clean, modern, youth-focused design with teal branding
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap&subset=latin');
 
 @layer base {
   :root {

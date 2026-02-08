@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Users, Heart, Award, Lightbulb } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,6 +16,10 @@ import mygMember3 from "@/assets/home/myg-member-3.jpeg";
 const HomePage = () => {
   return (
     <Layout>
+      <SEO
+        description="Empowering Multicultural Youth Leaders across Australia through education, advocacy, and community engagement. Join MYG today."
+        url="/"
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-myg-teal-light via-background to-background">
         <div className="container-page py-20 md:py-32 lg:py-40">
