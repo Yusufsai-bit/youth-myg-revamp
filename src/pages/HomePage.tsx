@@ -6,12 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Card, CardContent } from "@/components/ui/card";
 
-// Import local images
-import mygHomeHero from "@/assets/home/myg-home-hero.png";
-import mygEvent1 from "@/assets/home/myg-event-1.jpeg";
-import mygMember1 from "@/assets/home/myg-member-1.jpeg";
-import mygMember2 from "@/assets/home/myg-member-2.jpeg";
-import mygMember3 from "@/assets/home/myg-member-3.jpeg";
+// Import verified gallery images for reliability
+import bulldogsExpo from "@/assets/gallery/bulldogs-expo-1.jpeg";
+import banyuleFestival1 from "@/assets/gallery/banyule-festival-1.jpeg";
+import banyuleFestival2 from "@/assets/gallery/banyule-festival-2.jpeg";
+import referendumSession from "@/assets/gallery/referendum-session-1.jpeg";
+import youthCamp from "@/assets/gallery/youth-camp-1.jpg";
+import parliamentForum from "@/assets/gallery/parliament-forum-1.jpg";
 
 const HomePage = () => {
   return (
@@ -46,9 +47,12 @@ const HomePage = () => {
             </div>
             <div className="relative animate-fade-in animation-delay-400">
               <img
-                src={mygHomeHero}
-                alt="Multicultural Youth Group members"
+                src={bulldogsExpo}
+                alt="Multicultural Youth Group members at Western Bulldogs Youth Expo"
                 className="w-full h-auto rounded-2xl shadow-2xl"
+                width={800}
+                height={600}
+                loading="eager"
               />
             </div>
           </div>
@@ -83,9 +87,12 @@ const HomePage = () => {
           </div>
           <div className="relative">
             <img
-              src={mygEvent1}
-              alt="MYG event with young people"
+              src={banyuleFestival1}
+              alt="MYG members at Banyule Multicultural Festival"
               className="w-full h-auto rounded-2xl shadow-xl"
+              width={800}
+              height={600}
+              loading="lazy"
             />
           </div>
         </div>
@@ -151,20 +158,20 @@ const HomePage = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
-              image: mygMember1,
-              alt: "MYG member at Western Bulldogs Youth Expo",
+              image: referendumSession,
+              alt: "MYG members at Referendum information session",
             },
             {
-              image: mygMember2,
-              alt: "MYG members engaging at event",
+              image: banyuleFestival2,
+              alt: "MYG members engaging at Banyule Festival",
             },
             {
-              image: mygMember3,
-              alt: "MYG community gathering",
+              image: youthCamp,
+              alt: "MYG community gathering at youth camp",
             },
             {
-              image: mygEvent1,
-              alt: "MYG member participating in activities",
+              image: parliamentForum,
+              alt: "MYG members at Parliament House forum",
             },
           ].map((member, idx) => (
             <div key={idx} className="group relative overflow-hidden rounded-xl aspect-[3/4]">
