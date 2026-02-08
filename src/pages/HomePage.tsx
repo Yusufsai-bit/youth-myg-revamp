@@ -4,7 +4,13 @@ import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Card, CardContent } from "@/components/ui/card";
-import PartnersCarousel from "@/components/PartnersCarousel";
+
+// Import local images
+import mygHomeHero from "@/assets/home/myg-home-hero.png";
+import mygEvent1 from "@/assets/home/myg-event-1.jpeg";
+import mygMember1 from "@/assets/home/myg-member-1.jpeg";
+import mygMember2 from "@/assets/home/myg-member-2.jpeg";
+import mygMember3 from "@/assets/home/myg-member-3.jpeg";
 
 const HomePage = () => {
   return (
@@ -35,7 +41,7 @@ const HomePage = () => {
             </div>
             <div className="relative animate-fade-in animation-delay-400">
               <img
-                src="https://myg.org.au/wp-content/uploads/2023/04/Myg-home-2.png"
+                src={mygHomeHero}
                 alt="Multicultural Youth Group members"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />
@@ -72,7 +78,7 @@ const HomePage = () => {
           </div>
           <div className="relative">
             <img
-              src="https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-3.30.57-PM.jpeg"
+              src={mygEvent1}
               alt="MYG event with young people"
               className="w-full h-auto rounded-2xl shadow-xl"
             />
@@ -140,19 +146,19 @@ const HomePage = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
-              image: "https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-3.32.41-PM.jpeg",
+              image: mygMember1,
               alt: "MYG member at Western Bulldogs Youth Expo",
             },
             {
-              image: "https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-4.05.21-PM.jpeg",
+              image: mygMember2,
               alt: "MYG members engaging at event",
             },
             {
-              image: "https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-3.41.32-PM.jpeg",
+              image: mygMember3,
               alt: "MYG community gathering",
             },
             {
-              image: "https://myg.org.au/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-3.30.57-PM.jpeg",
+              image: mygEvent1,
               alt: "MYG member participating in activities",
             },
           ].map((member, idx) => (
@@ -169,38 +175,6 @@ const HomePage = () => {
         <div className="text-center mt-12">
           <Button variant="outline" size="lg" asChild>
             <Link to="/gallery">View Gallery</Link>
-          </Button>
-        </div>
-      </Section>
-
-      {/* Partners Section */}
-      <Section className="bg-secondary">
-        <SectionHeader
-          eyebrow="Our Partners"
-          title="Empowering Young People Together"
-          description="We collaborate with a diverse range of organisations to support our mission."
-        />
-        <PartnersCarousel
-          partners={[
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/sumali-australian-councel.png", alt: "Somali Australian Council" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/MelbourneFashionWeek.png", alt: "Melbourne Fashion Week" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/bansic.png", alt: "BANSIC" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/himilo-logo.png", alt: "Himilo" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/Banyule_Logo.png", alt: "Banyule City Council" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/Melbourne_Victory.png", alt: "Melbourne Victory" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/County_Court_of_Victoria.png", alt: "County Court of Victoria" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/rcaa-web-logo.png", alt: "RCAA" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/victoriya-police.png", alt: "Victoria Police" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/southern-migrant-and-refugee-center.png", alt: "Southern Migrant and Refugee Centre" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/Football_Victoria_logo.png", alt: "Football Victoria" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/crime-stopers.png", alt: "Crime Stoppers" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/city-of-darebin.png", alt: "City of Darebin" },
-            { src: "https://myg.org.au/wp-content/uploads/2023/10/small-victoriya.png", alt: "Small Business Victoria" },
-          ]}
-        />
-        <div className="text-center mt-12">
-          <Button variant="outline" asChild>
-            <Link to="/get-involved">Become a Partner</Link>
           </Button>
         </div>
       </Section>
