@@ -81,7 +81,7 @@ const boardMembers: BoardMember[] = [
     role: "Board Member",
     shortSummary: "Education leader and CEO with deep governance experience and a focus on inclusive schooling.",
     bio: "Aynur Simsirel is the CEO of Ilim College and has over 20 years of experience in education leadership and governance. She brings a strong commitment to inclusive schooling and interfaith dialogue, and she understands the role education can play in building belonging, confidence, and opportunity for young people. Aynur's leadership experience supports practical youth development and the conditions young people need to thrive. She contributes a focus on strong governance, organisational sustainability, and programs that are safe, inclusive, and high quality. Aynur is passionate about supporting young people to build leadership skills, strengthen connection across communities, and engage confidently in education, work, and civic life.",
-    linkedin: "https://www.linkedin.com/in/hakan-akyol-psm-64a57010/",
+    linkedin: "https://www.linkedin.com/in/aynur-simsirel-7802342a/",
     image: aynurSimsirelImg,
   },
   {
