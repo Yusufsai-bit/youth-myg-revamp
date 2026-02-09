@@ -73,7 +73,7 @@ const boardMembers: BoardMember[] = [
     shortSummary: "Cross cultural consultant and equity advocate working across government, corporate and community sectors.",
     bio: "Tasneem Chopra is a cross cultural consultant who addresses issues of equity and belonging through an intersectional lens across government, corporate, arts and not for profit sectors within Australia and overseas. She supports organisations with diversity and inclusion policy as an industry expert, delivers workshops, curates exhibitions and promotes social change towards greater cultural inclusion. Tasneem is also an accomplished MC and keynote speaker. As a commentator her expertise has been sought on leadership, cultural inclusion, gender justice, intersectionality, migration, social cohesion and social justice. For her efforts she was appointed inaugural Ambassador for Women of Colour, Australia, is a former Anti Racism Champion with the Australian Human Rights Commission and was awarded an Order of Australia Medal.",
     linkedin: "https://www.linkedin.com/in/tasneemchopra/",
-    website: "https://tasneemchopra.com/",
+    website: "https://www.tasneem.com.au/",
     image: tasneemChopraImg,
   },
   {
