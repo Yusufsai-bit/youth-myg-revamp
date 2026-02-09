@@ -32,6 +32,7 @@ const boardMembers: BoardMember[] = [
     role: "Board Member",
     shortSummary: "Senior policy and advocacy leader focused on Aboriginal youth justice and bicultural leadership.",
     bio: "Leela Gray is a Senior Policy and Advocacy Officer at the Commission for Children and Young People. She brings strong experience in policy and advocacy, with a clear focus on improving outcomes for young people. Leela is a champion of Aboriginal youth justice and bicultural leadership, and she is committed to ensuring systems are safer, fairer, and more responsive to the needs of young people and communities. Through her work, she supports approaches that centre voice, lived experience, and cultural strength. Leela contributes a grounded understanding of how policy and systems can better support multicultural young people, and she brings a strong commitment to equity, accountability, and meaningful change.",
+    linkedin: "https://www.linkedin.com/in/leela-gray-60565b212/",
     image: leelaGrayImg,
   },
   {
