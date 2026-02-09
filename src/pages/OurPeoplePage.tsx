@@ -56,7 +56,7 @@ const boardMembers: BoardMember[] = [
     role: "Board Member",
     shortSummary: "Youth leader and community advocate focused on refugee empowerment and multicultural engagement.",
     bio: "Yusuf Liban is a youth leader and community advocate with a strong focus on refugee empowerment and multicultural engagement. He is committed to creating practical pathways for young people to build confidence, connection, and leadership capability. Yusuf brings deep insight into the experiences and aspirations of multicultural young people, and he supports approaches that strengthen belonging and representation across communities and mainstream platforms. Yusuf is a finalist for the 2025 Australian of the Year. He is passionate about building programs and partnerships that help young people turn ideas into action and create lasting community impact.",
-    linkedin: "https://www.linkedin.com/in/yusuf-liban/",
+    linkedin: "https://www.linkedin.com/in/yusufliban/",
     image: yusufLibanImg,
   },
   {
