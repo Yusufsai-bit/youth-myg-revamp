@@ -48,7 +48,7 @@ const boardMembers: BoardMember[] = [
     role: "Board Member",
     shortSummary: "Policy leader and youth advocate focused on intersectional change and gender equity.",
     bio: "Yasmin Poole seeks to challenge policymakers to think differently. Her vision is for Australia to become a global leader in intersectional policymaking, with a Parliament that truly reflects the diversity of our communities. Yasmin is a Manager at MindTribes focusing on intersectional anti racism strategy. She is Plan International's National Ambassador, advocating for young women's human rights. She is the Non Executive Board Director of OzHarvest and the Australian Republic Movement. She also sits on the Law Advisory Board of the University of Wollongong and the Advocacy, Stakeholder Engagement and Fundraising Committee for the Multicultural Centre for Women's Health. Yasmin holds a Master of Public Policy and a Master of Women's, Gender and Sexuality Studies from the University of Oxford, where she studied on a Rhodes Scholarship.",
-    linkedin: "https://www.linkedin.com/in/yasmin-poole/",
+    linkedin: "https://www.linkedin.com/in/yasminpoole/",
     image: yasminPooleImg,
   },
   {
