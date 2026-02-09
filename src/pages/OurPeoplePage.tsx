@@ -64,7 +64,7 @@ const boardMembers: BoardMember[] = [
     role: "Board Member",
     shortSummary: "Senior multicultural affairs leader with extensive public service experience.",
     bio: "Hakan Akyol is the Executive Director at the Australian Multicultural Foundation Research Trust. He brings decades of experience in multicultural affairs and public service leadership, with a strong understanding of how government, community organisations, and institutions can work together to strengthen inclusion and social cohesion. Hakan's work reflects a commitment to supporting multicultural communities through thoughtful engagement and long term capability building. He contributes strategic oversight, governance maturity, and a clear focus on sustainable impact. Hakan supports MYG to build strong partnerships, strengthen organisational foundations, and ensure the organisation is positioned to scale its work in a way that remains community led and youth centred.",
-    linkedin: "https://www.linkedin.com/in/hakan-akyol-0b1b1b1b/",
+    linkedin: "https://www.linkedin.com/in/hakan-akyol-psm-64a57010/",
     image: hakanAkyolImg,
   },
   {
