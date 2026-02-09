@@ -40,7 +40,7 @@ const boardMembers: BoardMember[] = [
     shortSummary: "Founder of Third Culture Australia and community advocate for belonging, wellbeing and representation.",
     bio: "Krushnadevsinh (Kano) Ravalji is the founder of Third Culture Australia and a former Youth Commissioner at the Victorian Multicultural Commission. A recognised advocate and changemaker, Kano has worked across the multicultural and wellbeing sectors to elevate diverse voices and improve community outcomes. He has led mental health and wellbeing programs for international students, delivered in language health initiatives and co design projects during COVID, and collaborated with the Victorian Electoral Commission to strengthen civic participation among multicultural communities. As a regular contributor to national radio and media, Kano brings an authentic voice to conversations on belonging, wellbeing, and representation. Through Third Culture, he has delivered award winning programs that empower young people and communities to lead meaningful change.",
     linkedin: "https://www.linkedin.com/in/kanoravalji/",
-    website: "https://www.thirdculture.com.au/",
+    website: "https://www.thirdculture.net.au/",
     image: kanoRavaljiImg,
   },
   {
