@@ -14,6 +14,7 @@ import leelaGrayImg from "@/assets/board/leela-gray.png";
 import hakanAkyolImg from "@/assets/board/hakan-akyol.png";
 import aynurSimsirelImg from "@/assets/board/aynur-simsirel.png";
 import yusufLibanImg from "@/assets/board/yusuf-liban.jpg";
+import jamadHersiImg from "@/assets/board/jamad-hersi.jpg";
 
 interface BoardMember {
   name: string;
@@ -89,6 +90,7 @@ const boardMembers: BoardMember[] = [
     shortSummary: "Strategist and public sector leader focused on community engagement, equity and youth empowerment.",
     bio: "Jamad Hersi is a strategist and former Manager at the Victorian Multicultural Commission. She is a respected leader in community engagement, policy, and diversity, and she has championed inclusive practice across government. Jamad has co chaired the Victorian Public Sector Women of Colour Network, advocating for equity and representation in public service. She currently works with the Department of Justice and Community Safety in the early youth crime prevention space, focusing on proactive approaches to community safety and youth empowerment. Jamad brings strong systems thinking and a practical understanding of how youth voice can inform better policy and services. She supports strengthening partnerships, elevating lived experience, and expanding pathways for multicultural young people to lead.",
     linkedin: "https://www.linkedin.com/in/jamad-hersi/",
+    image: jamadHersiImg,
   },
 ];
 
