@@ -205,6 +205,28 @@ const GalleryPage = () => {
         </div>
       </section>
 
+      {/* Instagram Feed via Juicer.io */}
+      <Section className="bg-gradient-to-br from-myg-teal-light via-background to-background">
+        <SectionHeader
+          eyebrow="Follow Us"
+          title="MYG on Instagram"
+          description="Stay connected with our latest updates, events, and community highlights."
+        />
+        <div className="juicer-feed-wrapper">
+          <ul className="juicer-feed" data-feed-id="multiculturalyouthgroup" data-per="9" data-pages="1"></ul>
+        </div>
+        <div className="text-center mt-8">
+          <a
+            href="https://www.instagram.com/multiculturalyouthgroup"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[hsl(37,97%,54%)] via-[hsl(330,70%,50%)] to-[hsl(270,70%,55%)] text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+          >
+            Follow @multiculturalyouthgroup
+          </a>
+        </div>
+      </Section>
+
       {/* Gallery Grid */}
       <Section>
         <SectionHeader
@@ -237,28 +259,6 @@ const GalleryPage = () => {
               </div>
             </button>
           ))}
-        </div>
-      </Section>
-
-      {/* Instagram Feed via Juicer.io */}
-      <Section className="bg-gradient-to-br from-myg-teal-light via-background to-background">
-        <SectionHeader
-          eyebrow="Follow Us"
-          title="MYG on Instagram"
-          description="Stay connected with our latest updates, events, and community highlights."
-        />
-        <div className="juicer-feed-wrapper">
-          <ul className="juicer-feed" data-feed-id="multiculturalyouthgroup" data-per="9" data-pages="1"></ul>
-        </div>
-        <div className="text-center mt-8">
-          <a
-            href="https://www.instagram.com/multiculturalyouthgroup"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[hsl(37,97%,54%)] via-[hsl(330,70%,50%)] to-[hsl(270,70%,55%)] text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
-          >
-            Follow @multiculturalyouthgroup
-          </a>
         </div>
       </Section>
 
