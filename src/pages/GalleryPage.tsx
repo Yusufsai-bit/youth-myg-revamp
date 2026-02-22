@@ -57,8 +57,6 @@ import religiousWorkshop1 from "@/assets/gallery/religious-workshop-1.jpg";
 import religiousWorkshop2 from "@/assets/gallery/religious-workshop-2.jpg";
 import honourRoll from "@/assets/gallery/honour-roll.jpg";
 import electoralRoundtable1 from "@/assets/gallery/electoral-roundtable-1.jpg";
-import welcomingAustralia from "@/assets/gallery/welcoming-australia.jpg";
-import mosqueOpenDay1 from "@/assets/gallery/mosque-open-day-1.jpg";
 
 // Gallery images with captions exactly as on MYG site
 const galleryImages = [
@@ -245,7 +243,8 @@ const GalleryPage = () => {
               src={image.src}
               alt={image.caption.split(" – ")[0]}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
+              loading={index < 8 ? "eager" : "lazy"}
+              decoding="async"
               width={300}
               height={400} />
 
@@ -325,6 +324,7 @@ const GalleryPage = () => {
               <img
               src={currentImage.src}
               alt={currentImage.caption}
+              decoding="async"
               className="max-w-full max-h-[70vh] object-contain rounded-lg" />
 
             </div>
