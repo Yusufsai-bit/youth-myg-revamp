@@ -21,25 +21,25 @@ export const SectionHeader = ({
   title,
   description,
   centered = true,
-  className,
-}: {
-  eyebrow?: string;
-  title: string;
-  description?: string;
-  centered?: boolean;
-  className?: string;
-}) => {
-  return (
-    <div className={cn("mb-12", centered && "text-center", className)}>
-      {eyebrow && (
-        <span className="text-sm font-semibold uppercase tracking-wider text-primary mb-2 block">
-          {eyebrow}
-        </span>
-      )}
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
-      {description && (
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{description}</p>
-      )}
-    </div>
-  );
+  className
+
+
+
+
+
+
+}: {eyebrow?: string;title: string;description?: string;centered?: boolean;className?: string;}) => {
+  return;
+
+
+
+
+
+
+
+
+
+
+
+
 };
