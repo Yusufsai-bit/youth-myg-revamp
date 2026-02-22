@@ -98,8 +98,7 @@ const galleryImages = [
 { id: 34, src: religiousWorkshop2, caption: "Religious Identity Workshop – MYG held a recent workshop for multicultural youth, requested by our incredible community." },
 { id: 35, src: honourRoll, caption: "VIC Multicultural Honour Roll – MYG was invited to attend the Multicultural Honour Roll event, where our ambassador Sh.alaa was present. It was a great night of recognizing community contributions." },
 { id: 36, src: electoralRoundtable1, caption: "Victorian Electoral Committee Roundtable – MYG was invited to a roundtable to discuss the low voting figures in our communities and ways to make voting more accessible to our communities." },
-{ id: 37, src: welcomingAustralia, caption: "Welcoming Australia Symposium – MYG members participated in the Welcoming Australia symposium, sharing insights on multicultural inclusion and community building." },
-{ id: 38, src: mosqueOpenDay1, caption: "Victorian Mosque Open Day – MYG volunteers supported the Victorian Mosque Open Day, welcoming visitors and promoting intercultural understanding." }];
+];
 
 
 const GalleryPage = () => {
