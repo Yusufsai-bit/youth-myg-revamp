@@ -237,3 +237,9 @@
     animation-delay: 600ms;
   }
 }
+
+/* Hide Juicer branding */
+.juicer-feed .j-powered-by,
+.juicer-feed .j-poster-logo {
+  display: none !important;
+}
