@@ -12,8 +12,8 @@ export const Section = ({ children, className, containerClass, id }: SectionProp
   return (
     <section id={id} className={cn("section-padding", className)}>
       <div className={cn("container-page", containerClass)}>{children}</div>
-    </section>
-  );
+    </section>);
+
 };
 
 export const SectionHeader = ({
@@ -21,27 +21,27 @@ export const SectionHeader = ({
   title,
   description,
   centered = true,
-  className,
-}: {
-  eyebrow?: string;
-  title: string;
-  description?: string;
-  centered?: boolean;
-  className?: string;
-}) => {
-  return (
-    <div className={cn("mb-12 md:mb-16", centered && "text-center", className)}>
-      {eyebrow && (
-        <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-          {eyebrow}
-        </span>
-      )}
-      <h2 className="mb-4">{title}</h2>
-      {description && (
-        <p className={cn("text-lg max-w-3xl", centered && "mx-auto")}>
-          {description}
-        </p>
-      )}
-    </div>
-  );
+  className
+
+
+
+
+
+
+}: {eyebrow?: string;title: string;description?: string;centered?: boolean;className?: string;}) => {
+  return;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 };
