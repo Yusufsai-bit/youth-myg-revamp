@@ -238,12 +238,18 @@
   }
 }
 
-/* Hide Juicer branding */
+/* Hide Juicer branding and premium prompts */
 .juicer-feed .j-powered-by,
-.juicer-feed .j-poster-logo {
+.juicer-feed .j-poster-logo,
+.juicer-feed .j-premium,
+.juicer-feed .j-premium-cta,
+.juicer-feed [class*="premium"],
+.juicer-feed .j-paginate,
+.juicer-feed .juicer-button {
   display: none !important;
   height: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
   overflow: hidden !important;
+  visibility: hidden !important;
 }
