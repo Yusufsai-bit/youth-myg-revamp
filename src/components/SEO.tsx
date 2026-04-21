@@ -6,6 +6,7 @@ interface SEOProps {
   image?: string;
   url?: string;
   type?: "website" | "article";
+  children?: React.ReactNode;
 }
 
 const SITE_NAME = "Multicultural Youth Group";
@@ -19,6 +20,7 @@ const SEO = ({
   image = DEFAULT_IMAGE,
   url,
   type = "website",
+  children,
 }: SEOProps) => {
   const pageTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
   const canonicalUrl = url ? `${SITE_URL}${url}` : SITE_URL;
@@ -47,6 +49,7 @@ const SEO = ({
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
+      {children}
     </Head>
   );
 };
