@@ -98,7 +98,7 @@ const GetInvolvedPage = () => {
           {ways.map((way) => (
             <Card key={way.id} id={way.id} className="card-hover border shadow-sm">
               <CardHeader className="pb-4">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center mb-4">
                   <way.icon className="h-7 w-7 text-primary" />
                 </div>
                 <CardTitle className="text-2xl">{way.title}</CardTitle>
@@ -133,7 +133,7 @@ const GetInvolvedPage = () => {
           title="Empowering Young People Together"
           description="Over the years, MYG has had the privilege to work with and collaborate with a diverse range of organisations."
         />
-        <div className="bg-card rounded-2xl p-8 md:p-12 shadow-lg">
+        <div className="bg-card rounded-lg p-8 md:p-12 shadow-md">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold mb-4">Become a Partner</h3>

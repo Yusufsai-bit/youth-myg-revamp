@@ -135,7 +135,7 @@ const ContactPage = () => {
             <Card className="border-0 shadow-md">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
@@ -153,7 +153,7 @@ const ContactPage = () => {
             <Card className="border-0 shadow-md">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div>
@@ -177,7 +177,7 @@ const ContactPage = () => {
                   href="https://www.facebook.com/mikieforyouth/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
+                  className="p-3 rounded-md bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
                 >
                   <svg
                     className="h-5 w-5"
@@ -191,7 +191,7 @@ const ContactPage = () => {
                   href="https://www.instagram.com/myg_australia/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
+                  className="p-3 rounded-md bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
                 >
                   <svg
                     className="h-5 w-5"
@@ -205,7 +205,7 @@ const ContactPage = () => {
                   href="https://www.linkedin.com/company/multicultural-youth-group/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
+                  className="p-3 rounded-md bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
                 >
                   <svg
                     className="h-5 w-5"
