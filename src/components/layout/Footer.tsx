@@ -83,7 +83,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://www.facebook.com/mikieforyouth/"
+                href="https://www.facebook.com/Multiculturalyouthgroup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors"
@@ -92,7 +92,7 @@ const Footer = () => {
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="https://www.instagram.com/myg_australia/"
+                href="https://www.instagram.com/multiculturalyouthgroup/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors"
