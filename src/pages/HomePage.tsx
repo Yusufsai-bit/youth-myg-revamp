@@ -19,9 +19,33 @@ const HomePage = () => {
   return (
     <Layout>
       <SEO
-        description="Empowering Multicultural Youth Leaders across Australia through education, advocacy, and community engagement. Join MYG today."
+        description="MYG – Multicultural Youth Group empowering young people in Melbourne and Victoria through leadership programs, youth mentorship, and volunteering opportunities. Join 250+ multicultural young Australians building real skills and community connections."
         url="/"
-      />
+      >
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "NGO",
+            name: "Multicultural Youth Group",
+            alternateName: "MYG",
+            url: "https://myg.org.au",
+            logo: "https://myg.org.au/og-image.png",
+            description:
+              "MYG empowers multicultural young people in Melbourne and Victoria through leadership programs, mentorship, and volunteering opportunities.",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Melbourne",
+              addressRegion: "Victoria",
+              addressCountry: "AU",
+            },
+            sameAs: [
+              "https://www.instagram.com/multiculturalyouthgroup/",
+              "https://www.facebook.com/Multiculturalyouthgroup",
+              "https://www.linkedin.com/company/multicultural-youth-group",
+            ],
+          })}
+        </script>
+      </SEO>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-myg-teal-light via-background to-background">
         <div className="container-page py-20 md:py-32 lg:py-40">

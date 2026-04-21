@@ -200,8 +200,8 @@ const OurPeoplePage = () => {
   return (
     <Layout>
       <SEO
-        title="Our People"
-        description="Meet the MYG Board - experienced leaders from policy, education, community development, and advocacy guiding our mission."
+        title="Our People | MYG Board & Team Melbourne"
+        description="Meet the MYG board and team — experienced leaders from community development, education, policy, and advocacy driving youth empowerment across multicultural communities in Melbourne and Victoria."
         url="/our-people"
       />
       {/* Hero Section */}

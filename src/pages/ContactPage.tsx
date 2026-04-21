@@ -108,8 +108,8 @@ const ContactPage = () => {
   return (
     <Layout>
       <SEO
-        title="Contact Us"
-        description="Get in touch with Multicultural Youth Group. Contact us to learn more about our programs or how to get involved."
+        title="Contact MYG | Multicultural Youth Group Melbourne"
+        description="Contact Multicultural Youth Group (MYG) in Melbourne. Reach out to learn about youth leadership programs, mentorship opportunities, volunteering, or partnerships with our multicultural youth organisation in Victoria."
         url="/contact"
       />
       {/* Hero Section */}

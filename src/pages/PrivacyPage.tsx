@@ -6,8 +6,8 @@ const PrivacyPage = () => {
   return (
     <Layout>
       <SEO
-        title="Privacy Policy"
-        description="Learn how MYG collects, uses, and protects your personal information."
+        title="Privacy Policy | Multicultural Youth Group"
+        description="Read MYG's privacy policy. Learn how Multicultural Youth Group collects, uses, and protects your personal information in accordance with Australian privacy law."
         url="/privacy"
       />
       {/* Hero Section */}

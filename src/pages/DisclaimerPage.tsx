@@ -6,8 +6,8 @@ const DisclaimerPage = () => {
   return (
     <Layout>
       <SEO
-        title="Disclaimer"
-        description="Terms and conditions for using the MYG website."
+        title="Disclaimer | Multicultural Youth Group"
+        description="Read the disclaimer for the Multicultural Youth Group (MYG) website — myg.org.au."
         url="/disclaimer"
       />
       {/* Hero Section */}
