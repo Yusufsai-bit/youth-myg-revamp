@@ -16,8 +16,8 @@ const AboutPage = () => {
   return (
     <Layout>
       <SEO
-        title="About Us"
-        description="Learn about Multicultural Youth Group (MYG), a dynamic platform for Victoria's culturally diverse youth to connect, lead, and make a difference."
+        title="About MYG | Multicultural Youth Group Melbourne"
+        description="Learn about Multicultural Youth Group (MYG) — a Victoria-based youth organisation supporting culturally diverse young people aged 18–25 with leadership development, intercultural programs, and community engagement in Melbourne."
         url="/about"
       />
       {/* Hero Section */}

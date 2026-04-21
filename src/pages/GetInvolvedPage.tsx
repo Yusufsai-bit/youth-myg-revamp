@@ -68,8 +68,8 @@ const GetInvolvedPage = () => {
   return (
     <Layout>
       <SEO
-        title="Get Involved"
-        description="Join MYG as a member, volunteer, partner, or donor. Make a difference in the lives of multicultural youth across Victoria."
+        title="Get Involved | Join a Youth Organisation in Melbourne"
+        description="Join MYG as a member, volunteer, or partner. Get involved with Melbourne's leading multicultural youth organisation and access leadership programs, mentorship, and volunteering opportunities across Victoria."
         url="/get-involved"
       />
       {/* Hero Section */}

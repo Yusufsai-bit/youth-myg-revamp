@@ -66,8 +66,8 @@ const ProgramsPage = () => {
   return (
     <Layout>
       <SEO
-        title="Programs"
-        description="Explore MYG programs: Leadership Training, Volunteer Connect, and MentorMax. Develop skills and make a difference in your community."
+        title="Youth Programs Melbourne | Leadership, Mentorship & Volunteering"
+        description="Explore MYG's youth programs in Melbourne: Leadership Training workshops, MentorMax one-on-one mentorship, and Volunteer Connect opportunities. Develop real skills, expand your network, and make an impact in your community."
         url="/programs"
       />
       {/* Hero Section */}

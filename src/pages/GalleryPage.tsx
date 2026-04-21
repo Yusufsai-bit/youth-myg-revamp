@@ -182,8 +182,8 @@ const GalleryPage = () => {
   return (
     <Layout>
       <SEO
-        title="Gallery"
-        description="Browse photos from MYG events, youth camps, community programs, and multicultural gatherings across Victoria."
+        title="Gallery | MYG Events & Community Programs Melbourne"
+        description="Photos from MYG youth events, leadership camps, multicultural festivals, parliament forums, and community programs across Melbourne and Victoria."
         url="/gallery" />
 
       
