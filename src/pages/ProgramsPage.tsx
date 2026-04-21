@@ -91,7 +91,7 @@ const ProgramsPage = () => {
           {programs.map((program) => (
             <Card key={program.id} className="card-hover border-0 shadow-md">
               <CardContent className="p-8">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center mb-6">
                   <program.icon className="h-7 w-7 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{program.title}</h3>
@@ -118,7 +118,7 @@ const ProgramsPage = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className={idx % 2 === 1 ? "lg:order-2" : ""}>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center">
                   <program.icon className="h-7 w-7 text-primary" />
                 </div>
                 <h2 className="mb-0">{program.title}</h2>
@@ -144,7 +144,7 @@ const ProgramsPage = () => {
               <img
                 src={program.image}
                 alt={program.title}
-                className="w-full h-auto rounded-2xl shadow-xl"
+                className="w-full h-auto rounded-lg shadow-md"
                 width={800}
                 height={600}
                 loading="lazy"

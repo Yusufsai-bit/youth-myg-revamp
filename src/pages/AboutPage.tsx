@@ -56,7 +56,7 @@ const AboutPage = () => {
             <img
               src={mygEvent1}
               alt="MYG members at an event"
-              className="w-full h-auto rounded-2xl shadow-xl"
+              className="w-full h-auto rounded-lg shadow-md"
               width={800}
               height={600}
               loading="lazy"
@@ -70,7 +70,7 @@ const AboutPage = () => {
         <div className="grid md:grid-cols-2 gap-8">
           <Card className="border-0 shadow-lg">
             <CardContent className="p-8">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+              <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center mb-6">
                 <Target className="h-7 w-7 text-primary" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
@@ -81,7 +81,7 @@ const AboutPage = () => {
           </Card>
           <Card className="border-0 shadow-lg">
             <CardContent className="p-8">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+              <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center mb-6">
                 <Eye className="h-7 w-7 text-primary" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Our Vision</h3>

@@ -50,7 +50,7 @@ const HomePage = () => {
               <img
                 src={heroImage}
                 alt="MYG member being filmed at community event booth"
-                className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-auto rounded-2xl shadow-2xl object-cover"
+                className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-auto rounded-lg shadow-lg object-cover"
                 width={600}
                 height={400}
                 loading="eager"
@@ -58,9 +58,6 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        {/* Decorative elements */}
-        <div className="absolute top-20 right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       </section>
 
       {/* About Section */}
@@ -90,7 +87,7 @@ const HomePage = () => {
             <img
               src={banyuleFestival1}
               alt="MYG members at Banyule Multicultural Festival"
-              className="w-full h-auto rounded-2xl shadow-xl"
+              className="w-full h-auto rounded-lg shadow-md"
               width={800}
               height={600}
               loading="lazy"
@@ -132,7 +129,7 @@ const HomePage = () => {
           ].map((program) => (
             <Card key={program.title} className="card-hover border-0 shadow-md">
               <CardContent className="p-8">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center mb-6">
                   <program.icon className="h-7 w-7 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{program.title}</h3>
