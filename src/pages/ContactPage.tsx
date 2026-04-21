@@ -174,7 +174,7 @@ const ContactPage = () => {
               <h4 className="font-semibold mb-4">Follow Us</h4>
               <div className="flex gap-4">
                 <a
-                  href="https://www.facebook.com/mikieforyouth/"
+                  href="https://www.facebook.com/Multiculturalyouthgroup"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-md bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -188,7 +188,7 @@ const ContactPage = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://www.instagram.com/myg_australia/"
+                  href="https://www.instagram.com/multiculturalyouthgroup/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-md bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
