@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-        heading: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        sans: ['"Open Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+        heading: ['Manrope', '"Open Sans"', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -66,7 +66,15 @@ export default {
           teal: "hsl(var(--myg-teal))",
           "teal-light": "hsl(var(--myg-teal-light))",
           "teal-dark": "hsl(var(--myg-teal-dark))",
+          coral: "hsl(var(--myg-coral))",
+          "coral-light": "hsl(var(--myg-coral-light))",
+          "coral-dark": "hsl(var(--myg-coral-dark))",
           charcoal: "hsl(var(--myg-charcoal))",
+          dark: "hsl(var(--myg-dark))",
+          mid: "hsl(var(--myg-mid))",
+          light: "hsl(var(--myg-light))",
+          pale: "hsl(var(--myg-pale))",
+          "off-white": "hsl(var(--myg-off-white))",
           "grey-warm": "hsl(var(--myg-grey-warm))",
           "grey-cool": "hsl(var(--myg-grey-cool))",
         },
