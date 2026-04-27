@@ -11,29 +11,55 @@ import { Section, SectionHeader } from "@/components/ui/section";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 
+// Reject control chars (except tab/newline) to block null-byte / header-injection tricks
+const noControlChars = /^[^\x00-\x08\x0B\x0C\x0E-\x1F\x7F]*$/;
+// Block obvious spam patterns (URLs in name/subject, BBCode, excessive links in message)
+const noUrls = /\b(?:https?:\/\/|www\.)\S+/i;
+const noBbcode = /\[\/?(?:url|link|img)/i;
+
 // Validation schema for contact form
 const contactFormSchema = z.object({
   name: z
     .string()
     .trim()
     .min(1, "Name is required")
-    .max(100, "Name must be less than 100 characters"),
+    .max(100, "Name must be less than 100 characters")
+    .regex(noControlChars, "Name contains invalid characters")
+    .refine((v) => !noUrls.test(v), "Name cannot contain URLs")
+    .refine((v) => !/[\r\n]/.test(v), "Name cannot contain line breaks"),
   email: z
     .string()
     .trim()
     .min(1, "Email is required")
     .email("Please enter a valid email address")
-    .max(255, "Email must be less than 255 characters"),
+    .max(255, "Email must be less than 255 characters")
+    .regex(noControlChars, "Email contains invalid characters")
+    .refine((v) => !/[\r\n]/.test(v), "Email cannot contain line breaks"),
   subject: z
     .string()
     .trim()
     .min(1, "Subject is required")
-    .max(200, "Subject must be less than 200 characters"),
+    .max(200, "Subject must be less than 200 characters")
+    .regex(noControlChars, "Subject contains invalid characters")
+    .refine((v) => !noUrls.test(v), "Subject cannot contain URLs")
+    .refine((v) => !noBbcode.test(v), "Subject contains disallowed formatting"),
   message: z
     .string()
     .trim()
-    .min(1, "Message is required")
-    .max(2000, "Message must be less than 2000 characters"),
+    .min(10, "Message must be at least 10 characters")
+    .max(2000, "Message must be less than 2000 characters")
+    .regex(noControlChars, "Message contains invalid characters")
+    .refine(
+      (v) => (v.match(/https?:\/\//gi)?.length ?? 0) <= 2,
+      "Message contains too many links"
+    )
+    .refine(
+      (v) => (v.match(/\n/g)?.length ?? 0) <= 40,
+      "Message contains too many line breaks"
+    )
+    .refine((v) => !noBbcode.test(v), "Message contains disallowed formatting"),
+  // Honeypot: must remain empty. Bots typically fill all fields.
+  website: z.string().max(0, "Spam detected").optional().or(z.literal("")),
 });
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
@@ -46,6 +72,7 @@ const ContactPage = () => {
     email: "",
     subject: "",
     message: "",
+    website: "",
   });
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
 
@@ -101,6 +128,7 @@ const ContactPage = () => {
       email: "",
       subject: "",
       message: "",
+      website: "",
     });
     setIsSubmitting(false);
   };
@@ -225,6 +253,22 @@ const ContactPage = () => {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6">Send Us a Message</h3>
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Honeypot field — hidden from users, bots fill it and get rejected */}
+                  <div
+                    aria-hidden="true"
+                    style={{ position: "absolute", left: "-10000px", width: "1px", height: "1px", overflow: "hidden" }}
+                  >
+                    <Label htmlFor="website">Website</Label>
+                    <Input
+                      id="website"
+                      name="website"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={formData.website ?? ""}
+                      onChange={handleChange}
+                    />
+                  </div>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="name">Name</Label>
