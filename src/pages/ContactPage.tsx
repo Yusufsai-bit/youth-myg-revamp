@@ -72,6 +72,7 @@ const ContactPage = () => {
     email: "",
     subject: "",
     message: "",
+    website: "",
   });
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
 
@@ -127,6 +128,7 @@ const ContactPage = () => {
       email: "",
       subject: "",
       message: "",
+      website: "",
     });
     setIsSubmitting(false);
   };
@@ -251,6 +253,22 @@ const ContactPage = () => {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6">Send Us a Message</h3>
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Honeypot field — hidden from users, bots fill it and get rejected */}
+                  <div
+                    aria-hidden="true"
+                    style={{ position: "absolute", left: "-10000px", width: "1px", height: "1px", overflow: "hidden" }}
+                  >
+                    <Label htmlFor="website">Website</Label>
+                    <Input
+                      id="website"
+                      name="website"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={formData.website ?? ""}
+                      onChange={handleChange}
+                    />
+                  </div>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="name">Name</Label>
